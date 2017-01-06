@@ -1,6 +1,7 @@
 import config from 'config'
 import sniffer from 'sniffer'
 import classes from 'dom-classes'
+import ajax from 'please-ajax'
 import create from 'dom-create-element'
 import gsap from 'gsap'
 
@@ -18,6 +19,13 @@ class Preloader {
 	init(req, done) {
 
 		classes.add(config.body, 'is-loading')
+		
+		ajax.get(`${config.BASE}data/data.json`, {
+	 		success: (object) => {
+				window._data = object.data
+				done()
+	 		}
+ 		})
 
 		config.infos = sniffer.getInfos()
         

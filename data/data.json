@@ -1,0 +1,26 @@
+{
+  "projects" : {
+    "nupr" : {
+      "title" : "NUPR"
+    },
+    "get-with-the-times" : {
+      "title" : "Get With The Times"
+    },
+    "illustration" : {
+      "title" : "Illustration"
+    },
+    "posters" : {
+      "title" : "Posters"
+    },
+    "the-story-never-ends" : {
+      "title" : "The Story Never Ends"
+    },
+    "flocabulary" : {
+      "title" : "Flocabulary"
+    }
+  },
+  
+  "about" : "About",
+  
+  "contact" : "Contact"
+}

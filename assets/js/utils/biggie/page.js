@@ -12,7 +12,8 @@ export default (req, view, options, done) => {
   const cn = id.replace('/', '-')
   const page = create({ selector: 'div', id: `page-${cn}`, styles: `page page-${cn}` })
   const projects = window._data.projects
-  const data = req.params.id ? projects[req.params.id] : window._data
+  const route = req.route === '/' ? 'home' : req.route.slice(1)
+  const data = req.params.id ? projects[req.params.id] : window._data[route]
   const array = []
   
   for (let project in projects) {

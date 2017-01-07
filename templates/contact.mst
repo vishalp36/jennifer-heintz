@@ -1,5 +1,5 @@
 <div class="vertical-align">
   <div class="vertical-align__item">
-    <p>{{ contact }}</p>
+    <p>{{ title }}</p>
   </div>
 </div>

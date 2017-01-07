@@ -29,6 +29,7 @@
     "please-ajax": "^2.0.2",
     "prefix": "^1.0.0",
     "query-dom-components": "^0.1.0",
+    "smooth-scrolling": "^2.3.6",
     "sniffer": "github:watsondg/sniffer"
   },
   "devDependencies": {

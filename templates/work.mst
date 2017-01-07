@@ -1,14 +1,20 @@
-<div class="container js-smooth">
-  <ul class="project-tiles">
-    {{#tiles}}
-      <li class="project-tile js-tile" data-bg-from="{{ project.gradient.from }}" data-bg-to="{{ project.gradient.to }}">
-        <a class="project-tile__content" href="/work/{{ project.slug }}">
-          <img class="project-tile__img" src="{{ project.thumbnail }}" alt="{{ project.title }}">
-          <div class="project-tile__gradient" style=""></div>
-          <h2 class="project-tile__title">{{ project.title }}</h2>
-          <p class="project-tile__lede">{{ project.lede }}</p>
-        </a>
-      </li>
-    {{/tiles}}
-  </ul>
+<div class="container">
+  <div class="smooth js-smooth">
+    <ul class="project-tiles">
+      {{#tiles}}
+        <li class="project-tile js-tile" data-bg-from="{{ project.gradient.from }}" data-bg-to="{{ project.gradient.to }}">
+          <a class="project-tile__content" href="/work/{{ project.slug }}">
+            <div class="project-tile__media">
+              <div class="project-tile__img js-lazy" data-src="{{ project.thumbnail }}"></div>
+              <div class="project-tile__gradient" style="background-image: linear-gradient(135deg, {{ project.gradient.from }} 0%, {{ project.gradient.to }} 100%)"></div>
+            </div>  
+            <div class="project-tile__body">
+              <h2 class="project-tile__title">{{ project.title }}</h2>
+              <p class="project-tile__lede">{{ project.lede }}</p>
+            </div>
+          </a>
+        </li>
+      {{/tiles}}
+    </ul>
+  </div>
 </div>

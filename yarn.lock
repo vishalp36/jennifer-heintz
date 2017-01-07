@@ -784,6 +784,10 @@ binary-extensions@^1.0.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.7.0.tgz#6c1610db163abfb34edfe42fa423343a1e01185d"
 
+bindall-standalone@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/bindall-standalone/-/bindall-standalone-1.0.5.tgz#f7430388f1c7f9a9ade0fc75a400e710f6692a1d"
+
 bl@^0.9.1:
   version "0.9.5"
   resolved "https://registry.yarnpkg.com/bl/-/bl-0.9.5.tgz#c06b797af085ea00bc527afc8efcf11de2232054"
@@ -1625,7 +1629,7 @@ diffie-hellman@^5.0.0:
     miller-rabin "^4.0.0"
     randombytes "^2.0.0"
 
-dom-classes@^1.0.0:
+dom-classes@^1.0.0, "dom-classes@github:npm-dom/dom-classes":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/dom-classes/-/dom-classes-1.0.0.tgz#1825909726dc0394d2b8def258dc7208a82cbf16"
   dependencies:
@@ -1642,6 +1646,12 @@ dom-event@^1.0.0:
 "dom-event@git://github.com/mikkoh/dom-event":
   version "0.0.1"
   resolved "git://github.com/mikkoh/dom-event#6938b4fc8b86b06f872d25f5aa309e4d8fc3a4c9"
+
+dom-events@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/dom-events/-/dom-events-0.1.1.tgz#1d06598aec5cdd3d5dc30c7b30a857b0b174c987"
+  dependencies:
+    synthetic-dom-events "0.1.1"
 
 dom-select@^1.0.0:
   version "1.1.1"
@@ -2886,6 +2896,10 @@ lcid@^1.0.0:
     promise "^7.1.1"
     request "^2.72.0"
     source-map "^0.5.3"
+
+lethargy@^1.0.2:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/lethargy/-/lethargy-1.0.4.tgz#459dfc5aa49a10ef9056300b90ec03a88e3b98af"
 
 lexical-scope@^1.2.0:
   version "1.2.0"
@@ -4253,6 +4267,16 @@ slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
 
+smooth-scrolling:
+  version "2.3.6"
+  resolved "https://registry.yarnpkg.com/smooth-scrolling/-/smooth-scrolling-2.3.6.tgz#796a7aeedca7d64d9b1fdf258f50e21757a3e29c"
+  dependencies:
+    dom-classes "github:npm-dom/dom-classes"
+    dom-create-element "^1.0.2"
+    dom-events "^0.1.1"
+    prefix "^1.0.0"
+    virtual-scroll "^1.1.0"
+
 "sniffer@github:watsondg/sniffer":
   version "2.0.3"
   resolved "https://codeload.github.com/watsondg/sniffer/tar.gz/a668f84296dd013feb3d346511efa0619be2e7be"
@@ -4498,6 +4522,10 @@ syntax-error@^1.1.1:
   dependencies:
     acorn "^2.7.0"
 
+synthetic-dom-events@0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/synthetic-dom-events/-/synthetic-dom-events-0.1.1.tgz#3a452a96e759c7a79a8a5a9252912f706e7b6d6f"
+
 tar-pack@~3.1.0:
   version "3.1.4"
   resolved "https://registry.yarnpkg.com/tar-pack/-/tar-pack-3.1.4.tgz#bc8cf9a22f5832739f12f3910dac1eb97b49708c"
@@ -4573,6 +4601,10 @@ timers-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-1.4.2.tgz#c9c58b575be8407375cb5e2462dacee74359f41d"
   dependencies:
     process "~0.11.0"
+
+tiny-emitter@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/tiny-emitter/-/tiny-emitter-1.1.0.tgz#ab405a21ffed814a76c19739648093d70654fecb"
 
 to-array@0.1.4:
   version "0.1.4"
@@ -4795,6 +4827,15 @@ vinyl@1.X:
     clone "^1.0.0"
     clone-stats "^0.0.1"
     replace-ext "0.0.1"
+
+virtual-scroll@^1.1.0:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/virtual-scroll/-/virtual-scroll-1.1.1.tgz#924cf5c8cc067af44b802d8553008a342ac1979c"
+  dependencies:
+    bindall-standalone "^1.0.5"
+    lethargy "^1.0.2"
+    object-assign "^4.0.1"
+    tiny-emitter "^1.0.0"
 
 vlq@^0.2.1:
   version "0.2.1"

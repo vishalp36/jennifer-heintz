@@ -1,0 +1,134 @@
+.page-work {
+  background: @off-white;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+	width: 100%;
+  max-width: 1220px;
+  padding: @40px @100px 0 @100px;
+}
+
+.smooth {
+  padding: @100px 0;
+}
+
+.project-tiles {
+  .size(100%, auto);
+  padding: @30px;
+  margin: @60px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.project-tile {
+  position: relative;
+  width: calc(50% - @120px);
+  margin: @30px;
+  
+  &__content {
+    text-align: left;
+  }
+  
+  &__media {
+    position: relative;
+  }
+  
+  &__img {
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  &__gradient {
+    .absolute();
+    transition: opacity .7s @easeOutQuint;
+  }
+  
+  &__body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: @off-white;
+    margin: @24px @30px;
+  }
+  
+  &__title {
+    font-size: @28px;
+    margin-bottom: @20px;
+    line-height: 1.2;
+    opacity: 0;
+    transform: translateX(-12px);
+    transition: opacity .7s @easeOutQuint, transform .7s @easeOutQuint;
+  }
+  
+  &__lede {
+    font-size: @18px;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity .7s @easeOutQuint, transform .7s @easeOutQuint;
+  }
+  
+  &:nth-child(1) {
+    .project-tile__img {
+      padding-bottom: 90%;
+    }
+  }
+  
+  &:nth-child(2) {
+    margin-top: @220px;
+    .project-tile__img {
+      padding-bottom: 140%;
+    }
+  }
+  
+  &:nth-child(3) {
+    margin-top: -@330px;
+    .project-tile__img {
+      padding-bottom: 90%;
+    }
+  }
+  
+  &:nth-child(4) {
+    width: 75%;
+    transform: translateX(10%);
+    .project-tile__img {
+      padding-bottom: 66%;
+    }
+  }
+  
+  &:nth-child(5) {
+    .project-tile__img {
+      padding-bottom: 90%;
+    }
+  }
+  
+  &:nth-child(6) {
+    margin-top: @90px;
+    .project-tile__img {
+      padding-bottom: 66%;
+    }
+  }
+  
+  &:hover {
+    .project-tile__gradient {
+      opacity: 1;
+    }
+    .project-tile__title {
+      opacity: 1;
+      transform: none;
+    }
+    .project-tile__lede {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+.hidden {
+  opacity: 0;
+}

@@ -68,7 +68,8 @@
       "gradient" : {
         "from" : "#6CC497",
         "to" : "#9FC9EB"
-      }
+      },
+      "border_color" : "#CC0000"
     },
     "posters" : {
       "title" : "Posters",
@@ -78,7 +79,8 @@
       "gradient" : {
         "from" : "#2A338F",
         "to" : "#F4DBDB"
-      }
+      },
+      "border_color" : "#CC0000"
     },
     "the-story-never-ends" : {
       "title" : "The Story Never Ends",
@@ -88,7 +90,8 @@
       "gradient" : {
         "from" : "#94AEBF",
         "to" : "#E2C9B5"
-      }
+      },
+      "border_color" : "#CC0000"
     },
     "flocabulary" : {
       "title" : "Flocabulary",
@@ -98,11 +101,27 @@
       "gradient" : {
         "from" : "#67578F",
         "to" : "#F1BD96"
-      }
+      },
+      "border_color" : "#CC0000"
     }
   },
   
-  "about" : "About",
+  "work" : {
+    "border_color" : "#2B2B2B"
+  },
   
-  "contact" : "Contact"
+  "home" : {
+    "border_color" : "#0010CB"
+  },
+  
+  "about" : {
+    "title" : "About",
+    "border_color" : "#FFC7C7"
+  },
+  
+  "contact" : {
+    "title" : "Contact",
+    "border_color" : "#FFD054"
+  }
+  
 }

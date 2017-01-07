@@ -9,43 +9,53 @@ import biggie from '@utils/biggie'
 
 class Default {
     
-    constructor(opt = {}) {
-          
-        this.view = config.view
-        this.page = null
-        this.a = null
-    }
+  constructor(opt = {}) {
+        
+    this.view = config.view
+    this.page = null
+    this.a = null
+  }
+  
+  init(req, done, options) {
+
+    const opts = options || { cache: true, sub: false }
     
-    init(req, done, options) {
-
-        const opts = options || { cache: true, sub: false }
-        
-        const view = this.view
-        const ready = this.ready.bind(this, done)
-        const page = this.page = biggie.page(req, view, opts, ready)
-    }
-
-    ready() {
-
-        this.ui = query({ el: this.page })
-        
-        this.a = domselect.all('a', this.page)
-        
-        biggie.bind.add(this.a)
-    }
+    const view = this.view
+    const ready = this.ready.bind(this, done)
+    const page = this.page = biggie.page(req, view, opts, ready)
     
-    resize(width, height) {
-        
-        config.height = height
-        config.width = width
-    }
+    this.setBorderColor(req)
+  }
+
+  ready() {
+
+    this.ui = query({ el: this.page })
     
-    destroy() {
+    this.a = domselect.all('a', this.page)
+    
+    biggie.bind.add(this.a)
+  }
+  
+  resize(width, height) {
+      
+    config.height = height
+    config.width = width
+  }
+  
+  setBorderColor(req) {
+    const data = window._data
+    const route = req.route === '/' ? 'home' : req.route.slice(1)
+    const color = req.params.id ? data.projects[req.params.id].border_color : data[route].border_color
+    
+    config.body.style.borderColor = color
+  }
+  
+  destroy() {
 
-        biggie.bind.remove(this.a)
+    biggie.bind.remove(this.a)
 
-        this.a = null
-    }
+    this.a = null
+  }
 }
 
 module.exports = Default

@@ -8,9 +8,7 @@ module.exports = {
 	[`${config.BASE}`]: require('./sections/home'),
 	[`${config.BASE}home`]: { section: require('./sections/home') },
 	[`${config.BASE}about`]: { section: require('./sections/about') },
-	[`${config.BASE}section/:id`]: { section: require('./sections/section'), duplicate: true },
-    [`${config.BASE}gallery`]: { section: require('./sections/gallery'), duplicate: true, routes: {
-            '/:id': { section: require('./sections/sub'), duplicate: true }
-        }
-    }
+	[`${config.BASE}contact`]: { section: require('./sections/contact') },
+  [`${config.BASE}work`]: { section: require('./sections/work') }, 
+  [`${config.BASE}work/:id`]: { section: require('./sections/single'), duplicate: true }
 }

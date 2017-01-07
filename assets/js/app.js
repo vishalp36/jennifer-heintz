@@ -21,7 +21,7 @@ class App {
 
   addEvents() {
     
-    // biggie.bind.add(domselect.all('nav a'))
+    biggie.bind.add(domselect.all('nav a'))
   }
 }
 

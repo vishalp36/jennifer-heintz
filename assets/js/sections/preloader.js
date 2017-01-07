@@ -26,7 +26,7 @@ class Preloader {
 				done()
 	 		}
  		})
-
+		
 		config.infos = sniffer.getInfos()
         
 		this.createDOM()

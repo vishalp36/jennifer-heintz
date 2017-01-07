@@ -1,22 +1,28 @@
 {
   "projects" : {
     "nupr" : {
-      "title" : "NUPR"
+      "title" : "NUPR",
+      "slug" : "nupr"
     },
     "get-with-the-times" : {
-      "title" : "Get With The Times"
+      "title" : "Get With The Times",
+      "slug" : "get-with-the-times"
     },
     "illustration" : {
-      "title" : "Illustration"
+      "title" : "Illustration",
+      "slug" : "illustration"
     },
     "posters" : {
-      "title" : "Posters"
+      "title" : "Posters",
+      "slug" : "posters"
     },
     "the-story-never-ends" : {
-      "title" : "The Story Never Ends"
+      "title" : "The Story Never Ends",
+      "slug" : "the-story-never-ends"
     },
     "flocabulary" : {
-      "title" : "Flocabulary"
+      "title" : "Flocabulary",
+      "slug" : "flocabulary"
     }
   },
   

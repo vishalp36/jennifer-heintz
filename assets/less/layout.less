@@ -20,7 +20,8 @@
 }
 
 html,
-body{
+body {
+	height: 100%;
 	overflow: hidden;
 }
 
@@ -29,17 +30,49 @@ html {
 }
 
 body {
-	&.is-loaded {
-		footer{
-			opacity: 1;
-		}
-	}
+	border-width: @30px;
+	border-style: solid;
 }
 
 /* -----
 Typography
 ----- */
 @import "import/_typography.less";
+
+/* -----
+App UI
+----- */
+.nav-link {
+	position: absolute;
+	z-index: 1;
+	font-family: @nav-font;
+	font-size: @40px;
+	text-decoration: none;
+	padding: @16px;
+	
+	&--eyecon {
+		top: @30px;
+		left: @30px;
+		svg {
+			.size(@110px, auto);
+		}
+	}
+	
+	&--work {
+		top: @30px;
+		right: @30px;
+	}
+	
+	&--about {
+		bottom: @12px;
+		left: @30px;
+	}
+	
+	&--contact {
+		bottom: @12px;
+		right: @30px;
+	}
+}
 
 /* -----
 View
@@ -110,11 +143,6 @@ Home
 About
 ----- */
 @import "pages/_about.less";
-
-/* -----
-Sub Views
------ */
-@import "pages/_sub.less";
 
 /* -----
 Medias Queries

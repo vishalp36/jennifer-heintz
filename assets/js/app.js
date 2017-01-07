@@ -1,7 +1,8 @@
 import framework from 'framework'
+import config from 'config'
 import domselect from 'dom-select'
+import query from 'query-dom-components'
 import biggie from '@utils/biggie'
-import { name, version, repository } from '../../package.json'
 
 class App {
     
@@ -14,14 +15,16 @@ class App {
     
   init() {
     
+    config.ui = query({ el: config.body })
+    
     this.addEvents()
-
+    
     framework.init()
   }
 
   addEvents() {
     
-    biggie.bind.add(domselect.all('nav a'))
+    biggie.bind.add(config.ui.nav)
   }
 }
 

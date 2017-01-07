@@ -1,28 +1,104 @@
 {
   "projects" : {
     "nupr" : {
-      "title" : "NUPR",
-      "slug" : "nupr"
+      "title" : "Northeastern University Political Review",
+      "slug" : "nupr",
+      "lede" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+      "thumbnail" : "https://placeimg.com/480/480/people",
+      "hero" : "assets/img/nupr_hero.jpg",
+      "gradient" : {
+        "from" : "#2825A7",
+        "to" : "#8481FF"
+      },
+      "border_color" : "#CC0000",
+      "content" : [
+        {
+         "full_text" : {
+           "bg_color" : "#bada55",
+           "text" : "Lorem ipsum dolor sit amet.",
+           "align" : "center"
+         }
+        }, {
+          "full_image" : {
+            "src" : "assets/img/nupr_image_1.jpg",
+            "text" : "Lorem ipsum dolor sit amet."
+          }
+        }, {
+          "split" : {
+            "left" : {
+              "bg_color" : "#fff",
+              "text" : "Lorem ipsum dolor sit amet.",
+              "align" : "left"
+            },
+            "right" : {
+              "src" : "assets/img/nupr_image_2.jpg"
+            }
+          } 
+        }, {
+          "thirds" : {
+            "left" : {
+              "src" : "assets/img/nupr_image_3.jpg",
+              "text" : "Identity"
+            },
+            "center" : {
+              "src" : "assets/img/nupr_image_4.jpg"
+            },
+            "right" : {
+              "src" : "assets/img/nupr_image_5.jpg"
+            }
+          }
+        }
+      ]
     },
     "get-with-the-times" : {
       "title" : "Get With The Times",
-      "slug" : "get-with-the-times"
+      "slug" : "get-with-the-times",
+      "lede" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+      "thumbnail" : "https://placeimg.com/480/680/people",
+      "gradient" : {
+        "from" : "#392E7A",
+        "to" : "#CE6EAD"
+      }
     },
     "illustration" : {
       "title" : "Illustration",
-      "slug" : "illustration"
+      "slug" : "illustration",
+      "lede" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+      "thumbnail" : "https://placeimg.com/420/420/people",
+      "gradient" : {
+        "from" : "#6CC497",
+        "to" : "#9FC9EB"
+      }
     },
     "posters" : {
       "title" : "Posters",
-      "slug" : "posters"
+      "slug" : "posters",
+      "lede" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+      "thumbnail" : "https://placeimg.com/740/490/people",
+      "gradient" : {
+        "from" : "#2A338F",
+        "to" : "#F4DBDB"
+      }
     },
     "the-story-never-ends" : {
       "title" : "The Story Never Ends",
-      "slug" : "the-story-never-ends"
+      "slug" : "the-story-never-ends",
+      "lede" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+      "thumbnail" : "https://placeimg.com/380/380/people",
+      "gradient" : {
+        "from" : "#94AEBF",
+        "to" : "#E2C9B5"
+      }
     },
     "flocabulary" : {
       "title" : "Flocabulary",
-      "slug" : "flocabulary"
+      "slug" : "flocabulary",
+      "lede" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+      "thumbnail" : "https://placeimg.com/490/330/people",
+      "gradient" : {
+        "from" : "#67578F",
+        "to" : "#F1BD96"
+      }
     }
   },
   

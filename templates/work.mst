@@ -1,10 +1,14 @@
-<div class="vertical-align">
-  <div class="vertical-align__item">
-    <p>Work</p>
-    <ul>
-      {{#tiles}}
-        <li><a href="/work/{{ project.slug }}">{{project.title}}</a></li>
-      {{/tiles}}
-    </ul>
-  </div>
+<div class="container js-smooth">
+  <ul class="project-tiles">
+    {{#tiles}}
+      <li class="project-tile js-tile" data-bg-from="{{ project.gradient.from }}" data-bg-to="{{ project.gradient.to }}">
+        <a class="project-tile__content" href="/work/{{ project.slug }}">
+          <img class="project-tile__img" src="{{ project.thumbnail }}" alt="{{ project.title }}">
+          <div class="project-tile__gradient" style=""></div>
+          <h2 class="project-tile__title">{{ project.title }}</h2>
+          <p class="project-tile__lede">{{ project.lede }}</p>
+        </a>
+      </li>
+    {{/tiles}}
+  </ul>
 </div>

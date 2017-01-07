@@ -84,8 +84,12 @@ main {
 	.size(100%,100%);
 
 	.page {
-		.fixed();
-		.size(100%,100%);
+		position: fixed;
+		top: @30px; 
+		left: @30px; 
+		bottom: @30px; 
+		right: @30px;
+		overflow: hidden;
 		.hidden();
 		text-align: center;
 	}

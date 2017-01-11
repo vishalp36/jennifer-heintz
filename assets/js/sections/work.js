@@ -2,7 +2,8 @@ import config from 'config'
 import utils from 'utils'
 import classes from 'dom-classes'
 import Default from './default'
-import Smooth from 'smooth-scrolling'
+import Custom from '../lib/custom-smooth'
+import { on, off } from 'dom-event'
 
 class Work extends Default {
 	
@@ -11,6 +12,8 @@ class Work extends Default {
 		super(opt)
 
 		this.slug = 'work'
+		
+		this.onClick = this.onClick.bind(this)
 	}
 	
 	init(req, done) {
@@ -31,16 +34,32 @@ class Work extends Default {
 		
 		this.initSmooth();
 		this.lazyLoad()
+		
+		on(this.ui.button, 'click', this.onClick)
 	}
 	
 	removeEvents() {
 		
 		this.smooth.destroy()
+		
+		off(this.ui.button, 'click', this.onClick)
+	}
+	
+	initSmooth() {
+		
+		this.smooth = new Custom({
+			section: this.ui.smooth,
+			opacity: this.ui.button,
+			noscrollbar: true,
+			ease: 0.1
+		})
+
+		this.smooth.init()
 	}
 	
 	lazyLoad() {
 		
-		this.ui.lazy.forEach((el) => {
+		this.ui.lazy.forEach(el => {
 
         const img = document.createElement('img')
         const image = el.getAttribute('data-src')
@@ -58,15 +77,9 @@ class Work extends Default {
     })
 	}
 	
-	initSmooth() {
+	onClick() {
 		
-		this.smooth = new Smooth({
-			section: this.ui.smooth,
-			noscrollbar: true,
-			ease: 0.1
-		})
-
-		this.smooth.init()
+		this.smooth && this.smooth.scrollTo(0)
 	}
 
 	animateIn(req, done) {

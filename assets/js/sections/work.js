@@ -13,7 +13,8 @@ class Work extends Default {
 
 		this.slug = 'work'
 		
-		this.onClick = this.onClick.bind(this)
+		this.backToTop = this.backToTop.bind(this)
+		this.onTileClick = this.onTileClick.bind(this)
 	}
 	
 	init(req, done) {
@@ -25,24 +26,45 @@ class Work extends Default {
 		
 		super.ready()
 		
+		this.createCanvas()
+		
 		this.addEvents()
 		
 		done()
 	}
 	
+	resize(width, height) {
+		
+		this.canvas.width = width
+		this.canvas.height = height
+	}
+	
+	createCanvas() {
+		
+		this.canvas = document.createElement('canvas')
+		this.ctx = this.canvas.getContext('2d')
+		
+		this.canvas.width = config.width
+		this.canvas.height = config.height
+		
+		document.body.appendChild(this.canvas)
+	}
+	
 	addEvents() {
 		
-		this.initSmooth();
+		this.initSmooth()
 		this.lazyLoad()
 		
-		on(this.ui.button, 'click', this.onClick)
+		this.ui.tile.forEach(tile => on(tile, 'click', this.onTileClick))
+		on(this.ui.button, 'click', this.backToTop)
 	}
 	
 	removeEvents() {
 		
 		this.smooth.destroy()
 		
-		off(this.ui.button, 'click', this.onClick)
+		this.ui.tile.forEach(tile => off(tile, 'click', this.onTileClick))
+		off(this.ui.button, 'click', this.backToTop)
 	}
 	
 	initSmooth() {
@@ -77,9 +99,27 @@ class Work extends Default {
     })
 	}
 	
-	onClick() {
+	backToTop() {
 		
 		this.smooth && this.smooth.scrollTo(0)
+	}
+	
+	onTileClick(evt) {
+		
+		this.smooth.off()
+		
+		this.target = evt.currentTarget
+		const pageRect = this.page.getBoundingClientRect()
+		const rect = this.target.querySelector('.project-tile__gradient').getBoundingClientRect()
+		
+		this.c = {
+			W: rect.width,
+			H: rect.height,
+			X: rect.left - pageRect.left,
+			Y: rect.top - pageRect.top,
+			from: this.target.dataset.bgFrom,
+			to: this.target.dataset.bgTo
+		}
 	}
 
 	animateIn(req, done) {
@@ -94,14 +134,73 @@ class Work extends Default {
 	}
 	
 	animateOut(req, done) {
-
+		
 		classes.remove(config.body, `is-${this.slug}`)
+		
+		req.params.id ? this.animateToSingle(done) : this.animateToSection(done)
+	}
+	
+	animateToSingle(done) {
+		
+		this.canvas.style['z-index'] = 100
+		
+		this.draw(this.c)
+		
+		const time = .8
 
-		TweenLite.to(this.page, 0.7, {
-			autoAlpha: 0,
+		const tl = new TimelineMax({paused: true, onComplete: _ => {
+			// requestAnimationFrame(_ => config.body.removeChild(this.canvas))
+			done()
+		}})
+	
+		tl.to(this.ui.mask, time, { y: '-100%', ease: Expo.easeInOut }, 'cleanup')
+		tl.to([this.ui.lazy, this.ui.gradient], time, { y: '100%', ease: Expo.easeInOut }, 'cleanup')
+		tl.to(this.c, time, {
+			H: config.height,
+			Y: 0,
 			ease: Expo.easeInOut,
-			onComplete: done
+			onUpdate: _ => {
+				this.draw(this.c)
+			}
+		}, 'cleanup')
+		tl.to(this.c, time, {
+			W: config.width,
+			X: 0,
+			ease: Expo.easeInOut,
+			onUpdate: _ => {
+				this.draw(this.c)
+			}
 		})
+		tl.restart()	
+	}
+	
+	animateToSection(done) {
+		
+		const tl = new TimelineMax({paused: true, onComplete: done})
+		
+		tl.to(this.page, .7, { autoAlpha: 0, ease: Expo.easeInOut })
+		tl.restart()
+	}
+	
+	draw(c) {
+		
+		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
+		const C = this.getGradientLineLength(c.W, c.H)
+		const B = Math.sqrt((C * C)/2)
+		const translate = Math.abs((c.W - B) / 2)
+		const startX = c.W > c.H ? c.X + translate : c.X - translate
+		const startY = c.W > c.H ? c.Y - translate : c.Y + translate
+		const endX = c.W > c.H ? c.X + c.W - translate : c.X + c.W + translate
+		const endY = c.W > c.H ? c.Y + c.H + translate : c.Y + c.H - translate
+		const gradient = this.ctx.createLinearGradient(startX, startY, endX, endY)
+		gradient.addColorStop(0, c.from)
+		gradient.addColorStop(1, c.to)
+		this.ctx.fillStyle = gradient
+		this.ctx.fillRect(c.X, c.Y, c.W, c.H)
+	}
+	
+	getGradientLineLength(W, H) {
+		return Math.abs(W * Math.sin(45)) + Math.abs(H * Math.cos(45))
 	}
 
 	destroy(req, done) {

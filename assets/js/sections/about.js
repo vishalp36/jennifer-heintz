@@ -16,7 +16,6 @@ class About extends Default {
 		this.ease = { x: 0, y: 0 }
 		
 		this.onMouseMove = this.onMouseMove.bind(this)
-		this.run = this.run.bind(this)
 	}
 	
 	init(req, done) {
@@ -41,26 +40,19 @@ class About extends Default {
 	removeEvents() {
 		
 		off(config.body, 'mousemove', this.onMouseMove)
-		
-		cancelAnimationFrame(this.run)
 	}
 	
 	onMouseMove(evt) {
 		
-		this.page.x = (evt.pageX - config.width / 2) / config.width * 6
-  	this.page.y = (evt.pageY - config.height / 2) / config.height * 6
-		
-		requestAnimationFrame(this.run)
-	}
-	
-	run() {
+		this.page.x = (evt.pageX - config.width / 2) / config.width * 8
+  	this.page.y = (evt.pageY - config.height / 2) / config.height * 8
 		
 		this.ease.x += (this.page.x - this.ease.x) * .05
 		this.ease.y += (this.page.y - this.ease.y) * .05
 		
-		this.ui.bio.style.transform = `rotateX(${this.ease.y}deg) rotateY(${-this.ease.x}deg)`
-		
-		requestAnimationFrame(this.run)
+		requestAnimationFrame(_ => {
+			this.ui.bio.style.transform = `rotateX(${this.ease.y}deg) rotateY(${-this.ease.x}deg)`
+		})
 	}
 
 	animateIn(req, done) {

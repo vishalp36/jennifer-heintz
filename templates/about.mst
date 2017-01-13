@@ -1,5 +1,7 @@
-<div class="vertical-align">
-  <div class="vertical-align__item">
-    <p>{{ title }}</p>
-  </div>
-</div>
+<section class="bio">
+  <h1 class="bio__inner js-bio">
+    {{#content}}
+      {{{.}}}
+    {{/content}}
+  </h1>
+</section>

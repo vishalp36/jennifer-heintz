@@ -118,7 +118,12 @@
   
   "about" : {
     "title" : "About",
-    "border_color" : "#FFC7C7"
+    "border_color" : "#FFC7C7",
+    "content" : [
+      "<span>Jennifer Heintz</span> is a designer & illustrator living in Boston, MA.",
+      "She believes in color, funk, & not taking herself too seriously.",
+      "When she isn’t working she’s probably eating cheese, and/or reading the news."
+    ]
   },
   
   "contact" : {

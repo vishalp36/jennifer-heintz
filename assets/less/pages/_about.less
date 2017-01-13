@@ -1,4 +1,30 @@
 /* -----
 About
 ----- */
-.page-about {}
+.page-about {
+  overflow: auto;
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bio {
+  width: 100%;
+  max-width: 1170px;
+  padding: @30px;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  
+  &__inner {
+    text-align: left;
+    font-weight: 700;
+    font-size: @70px;
+    line-height: 1.16;
+    transform-origin: center center -120px;
+    
+    span {
+      color: @green;
+    }
+  }
+}

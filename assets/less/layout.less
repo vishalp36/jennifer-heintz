@@ -44,35 +44,38 @@ Typography
 /* -----
 App UI
 ----- */
-.nav-link {
-	position: absolute;
-	z-index: 999;
-	font-family: @nav-font;
-	font-size: @40px;
-	text-decoration: none;
-	padding: @16px;
+.nav {
 	
-	&--eyecon {
-		top: @30px;
-		left: @30px;
-		svg {
-			width: @110px
+	&__link {
+		position: absolute;
+		z-index: 999;
+		font-family: @nav-font;
+		font-size: @40px;
+		text-decoration: none;
+		padding: @16px;
+		
+		&--eyecon {
+			top: @30px;
+			left: @30px;
+			svg {
+				width: @110px
+			}
 		}
-	}
-	
-	&--work {
-		top: @30px;
-		right: @30px;
-	}
-	
-	&--about {
-		bottom: @12px;
-		left: @30px;
-	}
-	
-	&--contact {
-		bottom: @12px;
-		right: @30px;
+		
+		&--work {
+			top: @30px;
+			right: @30px;
+		}
+		
+		&--about {
+			bottom: @12px;
+			left: @30px;
+		}
+		
+		&--contact {
+			bottom: @12px;
+			right: @30px;
+		}
 	}
 }
 
@@ -85,10 +88,10 @@ main {
 
 	.page {
 		position: fixed;
-		top: @30px; 
-		left: @30px; 
-		bottom: @30px; 
-		right: @30px;
+		top: @29px; 
+		left: @29px; 
+		bottom: @29px; 
+		right: @29px;
 		overflow: hidden;
 		.hidden();
 		text-align: center;
@@ -146,9 +149,14 @@ Home
 @import "pages/_home.less";
 
 /* -----
-Home
+Work
 ----- */
 @import "pages/_work.less";
+
+/* -----
+Single
+----- */
+@import "pages/_single.less";
 
 /* -----
 About

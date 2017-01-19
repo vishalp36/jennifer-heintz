@@ -44,14 +44,14 @@ class About extends Default {
 	
 	onMouseMove(evt) {
 		
-		this.page.x = (evt.pageX - config.width / 2) / config.width * 8
-  	this.page.y = (evt.pageY - config.height / 2) / config.height * 8
+		this.page.x = (evt.pageX - config.width / 2) / config.width * 12
+  	this.page.y = (evt.pageY - config.height / 2) / config.height * 12
 		
-		this.ease.x += (this.page.x - this.ease.x) * .05
-		this.ease.y += (this.page.y - this.ease.y) * .05
+		this.ease.x += (this.page.x - this.ease.x) * .1
+		this.ease.y += (this.page.y - this.ease.y) * .1
 		
 		requestAnimationFrame(_ => {
-			this.ui.bio.style.transform = `rotateX(${this.ease.y}deg) rotateY(${-this.ease.x}deg)`
+			this.ui.bio.style.transform = `rotateX(${-this.ease.y}deg) rotateY(${this.ease.x}deg)`
 		})
 	}
 

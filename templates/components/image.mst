@@ -1,0 +1,7 @@
+<div class="block block--image js-block" style="background-image: url({{ src }})">
+  {{#text}}
+    <p class="block__caption">
+      {{ text }}
+    </p>
+  {{/text}}
+</div>

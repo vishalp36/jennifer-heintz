@@ -1,5 +1,19 @@
-<div class="vertical-align">
-  <div class="vertical-align__item">
-    <p>{{ title }}</p>
-  </div>
-</div>
+<section class="slider js-slider">
+  {{#content}}
+  
+    <article class="slide js-slides">
+      {{#text}}
+        {{> text_block}}
+      {{/text}}
+      
+      {{#image}}
+        {{> image_block}}
+      {{/image}}
+      
+      {{#split}}
+        {{> split_block}}
+      {{/split}}
+    </article>
+    
+  {{/content}}
+</section>

@@ -1,0 +1,9 @@
+<div class="block js-block" style="background-color: {{ bg_color }}; text-align: {{ align }};">
+  <div class="vertical-align">
+    <div class="vertical-align__item">
+      <h1 class="block__text">
+        {{ text }}
+      </h1>
+    </div>
+  </div>
+</div>

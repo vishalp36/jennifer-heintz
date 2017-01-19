@@ -1,21 +1,22 @@
-<h2>split block</h2>
-
-{{#left}}
-  <p>left</p>
-  {{#src}}
-    {{> image_block}}
-  {{/src}}
-  {{^src}}
-    {{> text_block}}
-  {{/src}}
-{{/left}}
-
-{{#right}}
-  <p>right</p>
-  {{#src}}
-    {{> image_block}}
-  {{/src}}
-  {{^src}}
-    {{> text_block}}
-  {{/src}}
-{{/right}}
+<div class="block block--split js-block">
+  <div class="block__column">
+    {{#left}}
+      {{#src}}
+        {{> image_block}}
+      {{/src}}
+      {{^src}}
+        {{> text_block}}
+      {{/src}}
+    {{/left}}
+  </div>
+  <div class="block__column">
+    {{#right}}
+      {{#src}}
+        {{> image_block}}
+      {{/src}}
+      {{^src}}
+        {{> text_block}}
+      {{/src}}
+    {{/right}}
+  </div>
+</div>

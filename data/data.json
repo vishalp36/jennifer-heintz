@@ -13,40 +13,26 @@
       "border_color" : "#CC0000",
       "content" : [
         {
-         "full_text" : {
+         "text" : {
            "bg_color" : "#bada55",
            "text" : "Lorem ipsum dolor sit amet.",
            "align" : "center"
          }
         }, {
-          "full_image" : {
-            "src" : "assets/img/nupr_image_1.jpg",
-            "text" : "Lorem ipsum dolor sit amet."
+          "image" : {
+            "src" : "http://placeimg.com/1280/800/people"
           }
         }, {
           "split" : {
             "left" : {
               "bg_color" : "#fff",
-              "text" : "Lorem ipsum dolor sit amet.",
+              "text" : "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
               "align" : "left"
             },
             "right" : {
-              "src" : "assets/img/nupr_image_2.jpg"
+              "src" : "http://placeimg.com/640/800/nature"
             }
           } 
-        }, {
-          "thirds" : {
-            "left" : {
-              "src" : "assets/img/nupr_image_3.jpg",
-              "text" : "Identity"
-            },
-            "center" : {
-              "src" : "assets/img/nupr_image_4.jpg"
-            },
-            "right" : {
-              "src" : "assets/img/nupr_image_5.jpg"
-            }
-          }
         }
       ]
     },

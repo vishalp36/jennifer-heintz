@@ -29,10 +29,23 @@ export default (req, view, options, done) => {
   if(!cache[id] || !options.cache) {
         
     const href = req.params.id ? 'single' : !req.params.id && id.substring(0,4) === 'work' ? 'work' : id
+    const blockTypes = ['image', 'text', 'split']  
+    const partials = {}
+    
+    if (req.params.id) {
+
+      blockTypes.forEach(type => {
+        ajax.get(`${config.BASE}templates/components/${type}.mst`, {
+          success: (object) => {
+            partials[`${type}_block`] = object.data
+          }
+        })  
+      })
+    }
       
     ajax.get(`${config.BASE}templates/${href}.mst`, {
       success: (object) => {
-        const rendered = Mustache.render(object.data, data)
+        const rendered = Mustache.render(object.data, data, partials)
         page.innerHTML = rendered
         if (options.cache) cache[id] = rendered
         done()

@@ -2,6 +2,7 @@ import config from 'config'
 import utils from 'utils'
 import classes from 'dom-classes'
 import Default from './default'
+import Manager from 'slider-manager'
 
 class Single extends Default {
 	
@@ -21,7 +22,49 @@ class Single extends Default {
 
 		super.ready()
 		
+		this.initSlides()
+		
 		done()
+	}
+	
+	initSlides() {	
+			
+		this.slides = Array.from(this.ui.slides)
+		this.rect = this.slides[0].getBoundingClientRect()
+		
+		this.slides.forEach(slide => {
+			
+			const index = this.slides.indexOf(slide)
+			const height = slide.getBoundingClientRect().height
+			
+			slide.style.transform = `translate3d(0, ${height * index}px, 0)`
+		})
+		
+		this.slider = new Manager({
+		  length: this.slides.length - 1,
+		  callback: (evt) => {
+				
+	      const index = evt.current
+	      const previous = evt.previous
+	      const down = evt.direction === 'downwards'
+
+	      this.slider.animating = true
+
+	      const tl = new TimelineMax({ paused: true, onComplete: _ => {
+	        setTimeout(_ => {
+						this.slider.animating = false
+					}, 200)
+	      }})
+
+	      tl.staggerTo(this.slides, .9, { cycle: {
+	        y: (loop) => index === loop ? 0 : loop < index ? -this.rect.height : this.rect.height
+	      }, ease: Power3.easeInOut}, 0, 0)
+
+	      tl.restart()
+		  }
+		})
+
+		this.slider.init()
 	}
 
 	animateIn(req, done) {
@@ -46,10 +89,17 @@ class Single extends Default {
 			onComplete: done
 		})
 	}
+	
+	resize() {
+		
+		this.rect = this.slides[0].getBoundingClientRect()
+	}
 
 	destroy(req, done) {
 
 		super.destroy()
+		
+		this.slider.destroy()
 
 		this.page.parentNode.removeChild(this.page)
 		

@@ -1,8 +1,1 @@
-<div class="block block--image js-lazy" data-src="{{ src }}">
-  {{#text}}
-    <p class="block__caption">
-      {{ text }}
-    </p>
-  {{/text}}
-</div>
-<div class="block block--gradient js-gradient" style="background-image: linear-gradient(135deg, {{ gradient.from }} 0%, {{ gradient.to }} 100%)"></div>
+<div class="block block--image" style="background-image: url('{{ src }}')"></div>

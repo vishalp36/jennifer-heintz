@@ -29,7 +29,7 @@ export default (req, view, options, done) => {
   if(!cache[id] || !options.cache) {
         
     const href = req.params.id ? 'single' : !req.params.id && id.substring(0,4) === 'work' ? 'work' : id
-    const blockTypes = ['image', 'text', 'split']  
+    const blockTypes = ['image', 'split', 'text', 'video']
     const partials = {}
     
     if (req.params.id) {

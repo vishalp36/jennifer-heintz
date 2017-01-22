@@ -5,34 +5,32 @@
       "slug" : "nupr",
       "lede" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
       "thumbnail" : "https://placeimg.com/480/480/people",
-      "hero" : "http://placeimg.com/1280/800/people",
+      "border_color" : "#FE4B3D",
       "gradient" : {
         "from" : "#2825A7",
         "to" : "#8481FF"
       },
-      "border_color" : "#FE4B3D",
       "content" : [
         {
+          "video" : {
+            "src" : "assets/media/video/nupr_magazine-sequence.mp4"
+          }
+        }, {
           "text" : {
             "bg_color" : "#F9F9F9",
             "text" : "A new brand and creative direction for Northeastern University’s only non-partisan, student-led political magazine.",
             "align" : "center"
           }
         }, {
-          "image" : {
-              "src" : "http://placeimg.com/1280/800/people"
+          "video" : {
+            "src" : "assets/media/video/nupr_magazine-sequence.mp4"
           }
         }, {
-          "split" : {
-            "left" : {
-              "bg_color" : "#fff",
-              "text" : "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
-              "align" : "left"
-            },
-            "right" : {
-              "src" : "http://placeimg.com/640/800/nature"
-            }
-          } 
+          "image" : {
+            "src" : "assets/media/img/nupr_business-cards.jpg",
+            "text" : "Business Cards",
+            "text_color" : "rgba(0,0,0,0.6)"
+          }
         }
       ]
     },

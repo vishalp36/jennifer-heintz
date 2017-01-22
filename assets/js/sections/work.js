@@ -33,27 +33,9 @@ class Work extends Default {
 		done()
 	}
 	
-	resize(width, height) {
-		
-		this.canvas.width = width
-		this.canvas.height = height
-	}
-	
-	createCanvas() {
-		
-		this.canvas = document.createElement('canvas')
-		this.ctx = this.canvas.getContext('2d')
-		
-		this.canvas.width = config.width
-		this.canvas.height = config.height
-		
-		document.body.appendChild(this.canvas)
-	}
-	
 	addEvents() {
 		
 		this.initSmooth()
-		this.lazyLoad()
 		
 		this.ui.tile.forEach(tile => on(tile, 'click', this.onTileClick))
 		on(this.ui.button, 'click', this.backToTop)
@@ -67,6 +49,17 @@ class Work extends Default {
 		off(this.ui.button, 'click', this.backToTop)
 	}
 	
+	createCanvas() {
+		
+		this.canvas = document.createElement('canvas')
+		this.ctx = this.canvas.getContext('2d')
+		
+		this.canvas.width = config.width
+		this.canvas.height = config.height
+		
+		document.body.appendChild(this.canvas)
+	}
+	
 	initSmooth() {
 		
 		this.smooth = new Custom({
@@ -77,26 +70,6 @@ class Work extends Default {
 		})
 
 		this.smooth.init()
-	}
-	
-	lazyLoad() {
-		
-		this.ui.lazy.forEach(el => {
-
-        const img = document.createElement('img')
-        const image = el.getAttribute('data-src')
-            
-        img.onload = () => {
-                
-          el.style['background-image'] = `url('${image}')`
-					
-          setTimeout(_ => {
-          	requestAnimationFrame(_ => classes.add(el.nextElementSibling, 'hidden'))
-					}, 1000)
-        }
-
-        img.src = image
-    })
 	}
 	
 	backToTop() {
@@ -148,10 +121,7 @@ class Work extends Default {
 		
 		const time = .8
 
-		const tl = new TimelineMax({paused: true, onComplete: _ => {
-			// requestAnimationFrame(_ => config.body.removeChild(this.canvas))
-			done()
-		}})
+		const tl = new TimelineMax({paused: true, onComplete: done})
 	
 		tl.to(this.ui.mask, time, { y: '-100%', ease: Expo.easeInOut }, 'cleanup')
 		tl.to([this.ui.lazy, this.ui.gradient], time, { y: '100%', ease: Expo.easeInOut }, 'cleanup')
@@ -178,7 +148,7 @@ class Work extends Default {
 		
 		const tl = new TimelineMax({paused: true, onComplete: done})
 		
-		tl.to(this.page, .7, { autoAlpha: 0, ease: Expo.easeInOut })
+		tl.to(this.page, 1, { autoAlpha: 0, ease: Expo.easeInOut })
 		tl.restart()
 	}
 	
@@ -201,6 +171,12 @@ class Work extends Default {
 	
 	getGradientLineLength(W, H) {
 		return Math.abs(W * Math.sin(45)) + Math.abs(H * Math.cos(45))
+	}
+	
+	resize(width, height) {
+		
+		this.canvas.width = width
+		this.canvas.height = height
 	}
 
 	destroy(req, done) {

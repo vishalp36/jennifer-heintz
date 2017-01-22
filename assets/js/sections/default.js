@@ -34,7 +34,39 @@ class Default {
     this.a = domselect.all('a', this.page)
     
     biggie.bind.add(this.a)
+    
+    this.ui.lazy && this.lazyLoad()
   }
+  
+  setBorderColor(req) {
+    const data = window._data
+    const route = req.route === '/' ? 'home' : req.route.slice(1)
+    const color = req.params.id ? data.projects[req.params.id].border_color : data[route].border_color
+    
+    config.body.style.borderColor = color
+  }
+  
+  lazyLoad() {
+		
+		this.ui.lazy.forEach(el => {
+
+        const img = document.createElement('img')
+        const image = el.getAttribute('data-src')
+            
+        img.onload = () => {
+                
+          el.style['background-image'] = `url('${image}')`
+					
+          if (el.nextElementSibling) {
+            setTimeout(_ => {
+            	requestAnimationFrame(_ => classes.add(el.nextElementSibling, 'hidden'))
+  					}, 1000)
+          }
+        }
+
+        img.src = image
+    })
+	}
   
   resize(width, height) {
       

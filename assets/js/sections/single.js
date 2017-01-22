@@ -70,12 +70,33 @@ class Single extends Default {
 	animateIn(req, done) {
 
 		classes.add(config.body, `is-${this.slug}`)
-
-		TweenLite.to(this.page, 1, {
-			autoAlpha: 1,
-			ease: Expo.easeInOut,
-			onComplete: done
-		})
+		const canvas = document.querySelector('canvas')
+		const tl = new TimelineMax({paused: true, onComplete: _ =>{
+			done()
+			req.previous && req.previous.route === '/work' && canvas.parentNode.removeChild(canvas)
+		}})
+		
+		// if routing from the work page, use delay and fade out canvas
+		if (req.previous && req.previous.route === '/work') {
+			tl.to(this.page, .6, {
+				autoAlpha: 1,
+				ease: Expo.easeInOut,
+				delay: 1.6
+			})
+			tl.to(canvas, .6, {
+				autoAlpha: 0,
+				ease: Expo.easeInOut
+			})
+			tl.restart()
+		} else {
+			// if not, just fade in the page
+			tl.to(this.page, .6, {
+				autoAlpha: 1,
+				ease: Expo.easeInOut
+			})
+			tl.restart()
+		}
+		
 	}
 
 	animateOut(req, done) {

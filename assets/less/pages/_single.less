@@ -28,11 +28,20 @@
     }
   }
   
+  &--gradient {
+    .absolute();
+    pointer-events: none;
+    transition: opacity .7s @easeOutQuint;
+  }
+  
   &__column {
     width: 50%;
   }
   
   &__text {
+    .center-block();
+    width: 100%;
+    max-width: 800px;
     font-size: @40px;
   }
 }

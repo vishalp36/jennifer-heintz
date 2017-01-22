@@ -1,16 +1,11 @@
+<!-- slider container -->
 <section class="slider js-slider">
   
-  <article class="slide js-slides">
-    <div class="block block--image js-lazy" data-src="{{ hero }}"></div>
-    <div class="block block--gradient js-gradient" style="background-image: linear-gradient(135deg, {{ gradient.from }} 0%, {{ gradient.to }} 100%)"></div>
-  </article>
-  
+  <!-- loop through content array -->
   {{#content}}
   
+    <!-- wrap each slide -->
     <article class="slide js-slides">
-      {{#text}}
-        {{> text_block}}
-      {{/text}}
       
       {{#image}}
         {{> image_block}}
@@ -19,7 +14,17 @@
       {{#split}}
         {{> split_block}}
       {{/split}}
+      
+      {{#text}}
+        {{> text_block}}
+      {{/text}}
+      
+      {{#video}}
+        {{> video_block}}
+      {{/video}}
+      
     </article>
     
   {{/content}}
+  
 </section>

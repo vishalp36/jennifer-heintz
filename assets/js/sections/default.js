@@ -48,7 +48,7 @@ class Default {
   
   lazyLoad() {
 		
-		this.ui.lazy.forEach(el => {
+		[...this.ui.lazy].forEach(el => {
 
         const img = document.createElement('img')
         const image = el.getAttribute('data-src')

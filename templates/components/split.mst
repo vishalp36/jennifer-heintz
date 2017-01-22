@@ -1,5 +1,5 @@
-<div class="block block--split js-block">
-  <div class="block__column">
+<div class="block block--split">
+  <div class="block--split__column">
     {{#left}}
       {{#src}}
         {{> image_block}}
@@ -9,7 +9,7 @@
       {{/src}}
     {{/left}}
   </div>
-  <div class="block__column">
+  <div class="block--split__column">
     {{#right}}
       {{#src}}
         {{> image_block}}

@@ -1,0 +1,5 @@
+<div class="block block--video">
+  <video class="block--video__video" preload autoplay loop>
+    <source src="{{ src }}" type="video/mp4">
+  </video>
+</div>

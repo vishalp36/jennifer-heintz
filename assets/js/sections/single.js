@@ -57,7 +57,7 @@ class Single extends Default {
 	      }})
 
 	      tl.staggerTo(this.slides, .9, { cycle: {
-	        y: (loop) => index === loop ? 0 : loop < index ? -this.rect.height : this.rect.height
+	        y: (loop) => index === loop ? 0 : loop < index ? -config.height : config.height
 	      }, ease: Power3.easeInOut}, 0, 0)
 
 	      tl.restart()

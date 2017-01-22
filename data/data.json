@@ -13,7 +13,7 @@
       "content" : [
         {
           "video" : {
-            "src" : "assets/media/video/nupr_magazine-sequence.mp4"
+            "src" : "/assets/media/video/nupr_magazine-sequence.mp4"
           }
         }, {
           "text" : {
@@ -23,11 +23,11 @@
           }
         }, {
           "video" : {
-            "src" : "assets/media/video/nupr_magazine-sequence.mp4"
+            "src" : "/assets/media/video/nupr_magazine-sequence.mp4"
           }
         }, {
           "image" : {
-            "src" : "assets/media/img/nupr_business-cards.jpg",
+            "src" : "/assets/media/img/nupr_business-cards.jpg",
             "text" : "Business Cards",
             "text_color" : "rgba(0,0,0,0.6)"
           }

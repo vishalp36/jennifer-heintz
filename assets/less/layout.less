@@ -29,12 +29,16 @@ html {
 	font: 100%/1.5 @font;
 }
 
+body {
+	background-color: #f9f9f9;
+}
+
 .border {
 	.fixed();
 	
 	border-width: @30px;
 	border-style: solid;
-	border-color: @white;
+	border-color: @off-white;
 	
 	pointer-events: none;
 	z-index: 9999;
@@ -110,32 +114,6 @@ Utils
 	&__item {
 		display: table-cell;
 		vertical-align: middle
-	}
-}
-
-/* -----
-Footer
------ */
-footer {
-	position: fixed; bottom: 0; right: 0; left: 0;
-	display: block;
-	text-align: center;
-	.size(100%,50px);
-	margin-bottom: 1rem;
-	z-index: 3;
-	opacity: 0;
-	transition: opacity .7s @easeOutExpo;
-
-	p {
-		color: @grey-light;
-
-		a {
-			color: @grey-dark;
-
-			&:hover {
-				text-decoration: underline;
-			}
-		}
 	}
 }
 

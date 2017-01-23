@@ -4,7 +4,7 @@
       "title" : "Northeastern University Political Review",
       "slug" : "nupr",
       "lede" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-      "thumbnail" : "https://placeimg.com/480/480/people",
+      "thumbnail" : "/assets/media/img/nupr_thumbnail.jpg",
       "border_color" : "#FE4B3D",
       "gradient" : {
         "from" : "#2825A7",
@@ -27,9 +27,33 @@
           }
         }, {
           "image" : {
-            "src" : "/assets/media/img/nupr_business-cards.jpg",
-            "text" : "Business Cards",
-            "text_color" : "rgba(0,0,0,0.6)"
+            "src" : "/assets/media/img/nupr_business-cards.jpg"
+          }
+        }, {
+          "split" : {
+            "left" : {
+              "text" : [
+                "A new brand and creative direction for Northeastern University’s only non-partisan, student-led political magazine."
+              ],
+              "text_color" : "#212121",
+              "bg_color" : "#f9f9f9"
+            },
+            "right" : {
+              "src" : "https://placeimg.com/720/900/nature"
+            }
+          }
+        }, {
+          "split" : {
+            "left" : {
+              "src" : "https://placeimg.com/720/900/nature"
+            },
+            "right" : {
+              "text" : [
+                "A new brand and creative direction for Northeastern University’s only non-partisan, student-led political magazine."
+              ],
+              "text_color" : "#212121",
+              "bg_color" : "#f9f9f9"
+            }
           }
         }
       ]

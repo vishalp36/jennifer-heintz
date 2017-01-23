@@ -31,13 +31,7 @@ class Single extends Default {
 			
 		this.slides = Array.from(this.ui.slides)
 
-		this.slides.forEach(slide => {
-			
-			const index = this.slides.indexOf(slide)
-			const height = slide.getBoundingClientRect().height
-			
-			slide.style.transform = `translate3d(0, ${height * index}px, 0)`
-		})
+		this.setSlides()
 		
 		this.slider = new Manager({
 		  length: this.slides.length - 1,
@@ -56,7 +50,8 @@ class Single extends Default {
 	      }})
 
 	      tl.staggerTo(this.slides, .9, { cycle: {
-	        y: (loop) => index === loop ? 0 : loop < index ? -config.height : config.height
+	        y: (loop) => index === loop ? 0 : loop < index ? -config.height : config.height,
+					zIndex: (loop) => index === loop ? 2 : 1
 	      }, ease: Power3.easeInOut}, 0, 0)
 
 	      tl.restart()
@@ -64,6 +59,16 @@ class Single extends Default {
 		})
 
 		this.slider.init()
+	}
+	
+	setSlides() {
+		this.slides.forEach(slide => {
+			
+			const index = this.slides.indexOf(slide)
+			const height = slide.getBoundingClientRect().height
+
+			slide.style.transform = `translateY(${height * index}px)`
+		})
 	}
 
 	animateIn(req, done) {

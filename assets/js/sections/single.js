@@ -10,7 +10,7 @@ class Single extends Default {
 		
 		super(opt)
 
-		this.slug = 'single'
+		this.slug = 'single'	
 	}
 	
 	init(req, done) {
@@ -22,14 +22,14 @@ class Single extends Default {
 
 		super.ready()
 		
+		this.slides = Array.from(this.ui.slides)
+		
 		this.initSlides()
 		
 		done()
 	}
 	
-	initSlides() {	
-			
-		this.slides = Array.from(this.ui.slides)
+	initSlides() {
 
 		this.setSlides()
 		
@@ -42,6 +42,17 @@ class Single extends Default {
 	      const down = evt.direction === 'downwards'
 
 	      this.slider.animating = true
+				
+				const currentVideo = this.slides[index].querySelector('video') || null
+				const previousVideo = this.slides[previous].querySelector('video') || null
+				
+				if (currentVideo) {
+					currentVideo.play()
+				}
+				
+				if (previousVideo) {
+					previousVideo.pause()
+				}
 
 	      const tl = new TimelineMax({ paused: true, onStart: _ => {
 					index === 0 ? this.setNavColor('light') : this.setNavColor()
@@ -93,8 +104,15 @@ class Single extends Default {
 		classes.add(config.body, `is-${this.slug}`)
 		const canvas = document.querySelector('canvas')
 		const tl = new TimelineMax({paused: true, onComplete: _ =>{
+			
 			done()
+			
+			// remove canvas
 			req.previous && req.previous.route === '/work' && canvas.parentNode.removeChild(canvas)
+			
+			// if hero is a video, play it
+			const video = this.slides[0].querySelector('video') || null
+			video && video.play()
 		}})
 		
 		// if routing from the work page, add delay 

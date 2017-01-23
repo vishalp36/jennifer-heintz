@@ -1,5 +1,5 @@
 <div class="block block--video" style="background-color: {{ bg_color }};" {{#light_ui}}data-light-ui{{/light_ui}}>
-  <video class="block--video__video" preload autoplay loop>
+  <video class="block--video__video" preload loop>
     <source src="{{ src }}" type="video/mp4">
   </video>
 </div>

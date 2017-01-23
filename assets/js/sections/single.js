@@ -43,7 +43,9 @@ class Single extends Default {
 
 	      this.slider.animating = true
 
-	      const tl = new TimelineMax({ paused: true, onComplete: _ => {
+	      const tl = new TimelineMax({ paused: true, onStart: _ => {
+					index === 0 ? this.setNavColor('light') : this.setNavColor()
+				}, onComplete: _ => {
 	        setTimeout(_ => {
 						this.slider.animating = false
 					}, 200)
@@ -62,12 +64,27 @@ class Single extends Default {
 	}
 	
 	setSlides() {
+		const heroBlock = this.slides[0].children[0]
+		
+		if (heroBlock.hasAttribute('data-light-ui')) {
+			this.setNavColor('light')
+		}
+		
 		this.slides.forEach(slide => {
 			
 			const index = this.slides.indexOf(slide)
 			const height = slide.getBoundingClientRect().height
 
 			slide.style.transform = `translateY(${height * index}px)`
+		})
+	}
+	
+	setNavColor(c) {
+		
+		const color = c || 'dark'
+		
+		config.nav.forEach(el => {
+			el.style.color = color === 'light' ? '#F9F9F9' : '#2b2b2b'
 		})
 	}
 

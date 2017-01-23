@@ -1,4 +1,4 @@
-<div class="block block--video">
+<div class="block block--video" style="background-color: {{ bg_color }};">
   <video class="block--video__video" preload autoplay loop>
     <source src="{{ src }}" type="video/mp4">
   </video>

@@ -30,8 +30,7 @@ class Single extends Default {
 	initSlides() {	
 			
 		this.slides = Array.from(this.ui.slides)
-		this.rect = this.slides[0].getBoundingClientRect()
-		
+
 		this.slides.forEach(slide => {
 			
 			const index = this.slides.indexOf(slide)
@@ -76,7 +75,9 @@ class Single extends Default {
 			req.previous && req.previous.route === '/work' && canvas.parentNode.removeChild(canvas)
 		}})
 		
-		// if routing from the work page, use delay and fade out canvas
+		// if routing from the work page, add delay 
+			// so gradient can do its thing
+			// and then fade out canvas
 		if (req.previous && req.previous.route === '/work') {
 			tl.to(this.page, .6, {
 				autoAlpha: 1,
@@ -111,11 +112,6 @@ class Single extends Default {
 		})
 	}
 	
-	resize() {
-		
-		this.rect = this.slides[0].getBoundingClientRect()
-	}
-
 	destroy(req, done) {
 
 		super.destroy()

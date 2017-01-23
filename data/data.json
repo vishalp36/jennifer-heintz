@@ -14,7 +14,8 @@
         {
           "video" : {
             "src" : "/assets/media/video/nupr_magazine-sequence.mp4",
-            "bg_color" : "#2C1EA3"
+            "bg_color" : "#2C1EA3",
+            "light_ui" : true
           }
         }, {
           "text" : {

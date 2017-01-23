@@ -1,1 +1,1 @@
-<div class="block block--image" style="background-image: url('{{ src }}')"></div>
+<div class="block block--image" style="background-image: url('{{ src }}')" {{#light_ui}}data-light-ui{{/light_ui}}></div>

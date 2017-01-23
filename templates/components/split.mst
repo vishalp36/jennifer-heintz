@@ -1,4 +1,4 @@
-<div class="block block--split">
+<div class="block block--split" {{#light_ui}}data-light-ui{{/light_ui}}>
   <div class="block--split__column">
     {{#left}}
       {{#src}}

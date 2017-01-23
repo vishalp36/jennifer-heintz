@@ -119,7 +119,7 @@ class Single extends Default {
 			// so gradient can do its thing
 			// and then fade out canvas
 		if (req.previous && req.previous.route === '/work') {
-			tl.to(this.page, .6, {
+			tl.to(this.page, 0, {
 				autoAlpha: 1,
 				ease: Expo.easeInOut,
 				delay: 1.6
@@ -148,8 +148,10 @@ class Single extends Default {
 			autoAlpha: 0,
 			ease: Expo.easeInOut,
 			clearProps: 'all',
-			onComplete: done
-		})
+			onComplete: _ => {
+				done()
+				this.setNavColor()
+		}})
 	}
 	
 	destroy(req, done) {

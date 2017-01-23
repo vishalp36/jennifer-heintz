@@ -13,7 +13,8 @@
       "content" : [
         {
           "video" : {
-            "src" : "/assets/media/video/nupr_magazine-sequence.mp4"
+            "src" : "/assets/media/video/nupr_magazine-sequence.mp4",
+            "bg_color" : "#2C1EA3"
           }
         }, {
           "text" : {
@@ -27,7 +28,8 @@
           }
         }, {
           "image" : {
-            "src" : "/assets/media/img/nupr_business-cards.jpg"
+            "src" : "/assets/media/img/nupr_business-cards.jpg",
+            "bg_color" : "#F9F9F9"
           }
         }, {
           "split" : {

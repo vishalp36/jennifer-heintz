@@ -123,8 +123,8 @@ class Work extends Default {
 
 		const tl = new TimelineMax({paused: true, onComplete: done})
 	
-		tl.to(this.ui.mask, time, { y: '-100%', ease: Expo.easeInOut }, 'cleanup')
-		tl.to([this.ui.lazy, this.ui.gradient], time, { y: '100%', ease: Expo.easeInOut }, 'cleanup')
+		tl.to(this.ui.mask, time, { y: '-101%', ease: Expo.easeInOut }, 'cleanup')
+		tl.to([this.ui.lazy, this.ui.gradient], time, { y: '101%', ease: Expo.easeInOut }, 'cleanup')
 		tl.to(this.c, time, {
 			H: config.height,
 			Y: 0,

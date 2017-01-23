@@ -29,10 +29,16 @@ html {
 	font: 100%/1.5 @font;
 }
 
-body {
+.border {
+	.fixed();
+	
 	border-width: @30px;
 	border-style: solid;
 	border-color: @white;
+	
+	pointer-events: none;
+	z-index: 9999;
+	
 	transition: border-color 1s;
 }
 
@@ -48,11 +54,11 @@ App UI
 	
 	&__link {
 		position: absolute;
-		z-index: 999;
 		font-family: @nav-font;
 		font-size: @40px;
 		text-decoration: none;
 		padding: @16px;
+		z-index: 999;
 		
 		&--eyecon {
 			top: @30px;
@@ -87,12 +93,7 @@ main {
 	.size(100%,100%);
 
 	.page {
-		position: fixed;
-		top: @30px; 
-		left: @30px; 
-		bottom: @30px; 
-		right: @30px;
-		overflow: hidden;
+		.fixed();
 		.hidden();
 		text-align: center;
 	}

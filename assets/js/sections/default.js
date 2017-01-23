@@ -39,11 +39,13 @@ class Default {
   }
   
   setBorderColor(req) {
+    
+    const border = document.querySelector('.js-border')
     const data = window._data
     const route = req.route === '/' ? 'home' : req.route.slice(1)
     const color = req.params.id ? data.projects[req.params.id].border_color : data[route].border_color
     
-    config.body.style.borderColor = color
+    border.style.borderColor = color
   }
   
   lazyLoad() {
@@ -72,14 +74,6 @@ class Default {
       
     config.height = height
     config.width = width
-  }
-  
-  setBorderColor(req) {
-    const data = window._data
-    const route = req.route === '/' ? 'home' : req.route.slice(1)
-    const color = req.params.id ? data.projects[req.params.id].border_color : data[route].border_color
-    
-    config.body.style.borderColor = color
   }
   
   destroy() {

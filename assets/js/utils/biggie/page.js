@@ -35,8 +35,6 @@ export default (req, view, options, done) => {
     }
   })
   
-  console.log(data.tiles)
-  
   view.appendChild(page)
 
   if(!cache[id] || !options.cache) {

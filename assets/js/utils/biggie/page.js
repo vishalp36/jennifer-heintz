@@ -24,6 +24,19 @@ export default (req, view, options, done) => {
   
   data.tiles = array
   
+  data.tiles.forEach(tile => {
+    const index = data.tiles.indexOf(tile)
+    const next = index === data.tiles.length - 1 ? 0 : index + 1
+    
+    tile.project['next'] = {
+      title: data.tiles[next].project.title,
+      slug: data.tiles[next].project.slug,
+      gradient: data.tiles[next].project.gradient
+    }
+  })
+  
+  console.log(data.tiles)
+  
   view.appendChild(page)
 
   if(!cache[id] || !options.cache) {

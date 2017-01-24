@@ -23,7 +23,7 @@
       <div class="vertical-align">
         <div class="next-project__inner vertical-align__item">
           <p class="next-project__label">Next Project</p>
-          <h1>{{ next.title }}</h1>
+          <h1 class="next-project__title">{{ next.title }}</h1>
         </div>
       </div>
     </a>

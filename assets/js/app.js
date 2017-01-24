@@ -50,8 +50,8 @@ class App {
     this.translate.x = normalizedX * this.eye.width
     this.translate.y = normalizedY * this.eye.height
     
-    this.ease.x += (this.translate.x - this.ease.x) * .1
-    this.ease.y += (this.translate.y - this.ease.y) * .1
+    this.ease.x += (this.translate.x - this.ease.x) * 0.1
+    this.ease.y += (this.translate.y - this.ease.y) * 0.1
     
     requestAnimationFrame(_ => {
       

@@ -1,5 +1,9 @@
 <div class="vertical-align">
   <div class="vertical-align__item">
-    <p>{{ title }}</p>
+    <div class="contact">
+      {{#links}}
+        <a class="contact__link" target="_blank" href="{{ link }}">{{ label }}</a>
+      {{/links}}
+    </div>
   </div>
 </div>

@@ -12,7 +12,7 @@
 	box-sizing: border-box;
 
 	text-rendering: optimizeLegibility;
-	
+
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
@@ -35,14 +35,14 @@ body {
 
 .border {
 	.fixed();
-	
+
 	border-width: @30px;
 	border-style: solid;
 	border-color: @off-white;
-	
+
 	pointer-events: none;
 	z-index: 9999;
-	
+
 	transition: border-color 1s;
 }
 
@@ -55,7 +55,7 @@ Typography
 App UI
 ----- */
 .nav {
-	
+
 	&__link {
 		position: absolute;
 		font-family: @nav-font;
@@ -65,7 +65,7 @@ App UI
 		z-index: 999;
 		transition: color .4s;
 		transition-delay: .2s;
-		
+
 		&--eyecon {
 			top: @30px;
 			left: @30px;
@@ -73,17 +73,17 @@ App UI
 				width: @90px
 			}
 		}
-		
+
 		&--work {
 			top: @16px;
 			right: @30px;
 		}
-		
+
 		&--about {
 			bottom: @12px;
 			left: @30px;
 		}
-		
+
 		&--contact {
 			bottom: @12px;
 			right: @30px;
@@ -112,7 +112,7 @@ Utils
 	display: table;
 	position: relative;
 	.size(100%,100%);
-	
+
 	&__item {
 		display: table-cell;
 		vertical-align: middle
@@ -143,6 +143,11 @@ Single
 About
 ----- */
 @import "pages/_about.less";
+
+/* -----
+Contact
+----- */
+@import "pages/_contact.less";
 
 /* -----
 Medias Queries

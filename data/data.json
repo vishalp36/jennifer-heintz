@@ -116,17 +116,17 @@
       "border_color" : "#CC0000"
     }
   },
-  
+
   "work" : {
     "title" : "Work",
     "border_color" : "#2B2B2B"
   },
-  
+
   "home" : {
     "title" : "Home",
     "border_color" : "#0010CB"
   },
-  
+
   "about" : {
     "title" : "About",
     "border_color" : "#FFC7C7",
@@ -136,10 +136,17 @@
       "When she isn’t working she’s probably eating cheese, and/or reading the news."
     ]
   },
-  
+
   "contact" : {
-    "title" : "Contact",
-    "border_color" : "#FFD054"
+    "border_color" : "#FFD054",
+    "links" : [
+      { "label" : "Email", "link" : "mailto:jennifermheintz@gmail.com" },
+      { "label" : "Instagram", "link" : "http://instagram.com/jennyheintz" },
+      { "label" : "Twitter", "link" : "http://twitter.com/jennyheintz" },
+      { "label" : "LinkedIn", "link" : "#0" },
+      { "label" : "Behance", "link" : "#0" },
+      { "label" : "Vimeo", "link" : "#0" }
+    ]
   }
-  
+
 }

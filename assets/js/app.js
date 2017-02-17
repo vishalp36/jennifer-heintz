@@ -27,9 +27,9 @@ class App {
 
     config.ui = query({ el: config.body })
 
-    this.addEvents()
-
     framework.init()
+
+    this.addEvents()
   }
 
   addEvents() {

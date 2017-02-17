@@ -35,15 +35,42 @@ body {
 
 .border {
 	.fixed();
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 
 	border-width: @30px;
 	border-style: solid;
 	border-color: @off-white;
 
 	pointer-events: none;
-	z-index: 9999;
+	z-index: 8888;
 
-	transition: border-color 1s;
+	transition: border-color 1s, background-color .25s;
+
+	h2, svg {
+		opacity: 0;
+		transition: opacity .25s;
+	}
+
+	h2 {
+		font-family: @nav-font;
+		font-size: @40px;
+		line-height: 1.2;
+		padding: 0 6rem;
+		margin-bottom: 2rem;
+	}
+
+	@media (orientation: portrait) {
+		pointer-events: auto;
+		border-color: @blue;
+		background-color: @white;
+
+		h2, svg {
+			opacity: 1;
+		}
+	}
 }
 
 /* -----
@@ -69,6 +96,7 @@ App UI
 		&--eyecon {
 			top: @30px;
 			left: @30px;
+			z-index: 9999;
 			svg {
 				width: @90px
 			}

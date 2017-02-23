@@ -100,26 +100,26 @@ An object where each key corresponds to a project slug.
 The value of each project key is an object containing all of the project's data:
 
 `title` - string
-The title of the project as a string
+- The title of the project as a string
 
 `slug` - string
-The slug for the project. This must match the key for the project defined before.
+- The slug for the project. This must match the key for the project defined before.
 
 `lede` - string
-Text that will appear on each project tile on the work page.
+- Text that will appear on each project tile on the work page.
 
 `thumbnail` - string
-The path to an image for the project tile on the work page. Make sure it's the right dimensions!
+- The path to an image for the project tile on the work page. Make sure it's the right dimensions!
 
 `border_color` - string
-A hex code for the color of the border for that project
+- A hex code for the color of the border for that project
 
 
 `gradient` - object
-An object defining the colors of the gradient for each project. Keys are `"from"` and `"to"` and the values of each are the hex codes.
+- An object defining the colors of the gradient for each project. Keys are `"from"` and `"to"` and the values of each are the hex codes.
 
 `content` - array of objects
-Contains information about each block or slide of the project's case study. More on that below.
+- Contains information about each block or slide of the project's case study. More on that below.
 
 ### Case Study Blocks
 As mentioned briefly above, each project has `content` which is an array of objects. Each object inside content represents one block or slide in the case study. Each block object will contain exactly one key-value pair. The key is the name of the block type, and the value is an object with the data required for that block type.
@@ -144,21 +144,21 @@ Here's an example block within a project's `content` object:
 The order of the block objects determines the order of the slides in the case study. Here is an overview of each block type available:
 
 ### `text`
-3 key-value pairs:
-`bg_color` - string, hex code
-`text` - string, text content
-`text_color` - string, hex code
-`align` - string, css text-align values (center, left, or right)
+- 3 key-value pairs:
+  - `bg_color` - string, hex code
+  - `text` - string, text content
+  - `text_color` - string, hex code
+  - `align` - string, css text-align values (center, left, or right)
 
 ### `image`
-2 key-value pairs:
-`bg_color` - string, hex code
-`src` - string, path to the image file
+- 2 key-value pairs:
+  - `bg_color` - string, hex code
+  - `src` - string, path to the image file
 
 ### `split`
-2 key-value pairs:
-`left` and `right` - both objects containing either text block info or image block info
+- 2 key-value pairs:
+  - `left` and `right` - both objects containing either text block info or image block info
 
 ### `video`
-1 key-value pair:
-`src` - string, path to the mp4 video file
+- 1 key-value pair:
+  - `src` - string, path to the mp4 video file

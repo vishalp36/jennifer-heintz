@@ -335,14 +335,9 @@
     }
   },
 
-  "work" : {
+  "home" : {
     "title" : "Work",
     "border_color" : "#2B2B2B"
-  },
-
-  "home" : {
-    "title" : "Home",
-    "border_color" : "#0010CB"
   },
 
   "about" : {

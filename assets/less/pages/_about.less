@@ -15,14 +15,39 @@ About
   padding: @30px;
   transform-style: preserve-3d;
   transform: translateZ(-100px);
-  
+
+  @media (max-width: 1240px) {
+    max-width: 1000px;
+  }
+
+  @media (max-width: 1000px) {
+    padding: 0 @60px;
+  }
+
+  @media (max-width: 700px) {
+    padding: 0 @100px;
+  }
+
   &__inner {
     text-align: left;
     font-weight: 700;
     font-size: @70px;
     line-height: 1.16;
     transform-origin: center center -120px;
-    
+
+    @media (max-width: 1240px) {
+      font-size: @60px;
+    }
+
+    @media (max-width: 1000px) {
+      font-size: @50px;
+    }
+
+    @media (max-width: 700px) {
+      font-size: @28px;
+      line-height: 1.3;
+    }
+
     span {
       color: @green;
     }

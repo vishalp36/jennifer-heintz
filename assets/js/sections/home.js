@@ -82,6 +82,7 @@ class Home extends Default {
 		this.smooth.off()
 
 		this.target = evt.currentTarget
+
 		const pageRect = this.page.getBoundingClientRect()
 		const rect = this.target.querySelector('.project-tile__gradient').getBoundingClientRect()
 
@@ -145,6 +146,8 @@ class Home extends Default {
 	}
 
 	animateToSection(done) {
+
+		this.canvas.parentNode.removeChild(this.canvas)
 
 		const tl = new TimelineMax({paused: true, onComplete: done})
 

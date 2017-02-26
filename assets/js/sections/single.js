@@ -115,10 +115,11 @@ class Single extends Default {
 			video && video.play()
 		}})
 
-		// if routing from the work page, add delay
+		// if routing from the home, add delay
 			// so gradient can do its thing
 			// and then fade out canvas
 		if (req.previous && req.previous.route === '/') {
+
 			tl.to(this.page, 0, {
 				autoAlpha: 1,
 				ease: Expo.easeInOut,
@@ -129,9 +130,11 @@ class Single extends Default {
 				ease: Expo.easeInOut
 			})
 			tl.restart()
+
 		} else {
+
 			// if not, just fade in the page
-			tl.to(this.page, .6, {
+			tl.to(this.page, 1, {
 				autoAlpha: 1,
 				ease: Expo.easeInOut
 			})

@@ -3,7 +3,7 @@
     "nupr" : {
       "title" : "Northeastern University Political Review",
       "slug" : "nupr",
-      "lede" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
+      "lede" : "A new brand and creative direction for Northeastern University’s student-led political magazine.",
       "thumbnail" : "/assets/media/img/nupr_thumbnail.jpg",
       "border_color" : "#FE4B3D",
       "gradient" : {
@@ -15,12 +15,13 @@
           "video" : {
             "src" : "/assets/media/video/nupr_magazine-sequence.mp4",
             "bg_color" : "#2C1EA3",
-            "light_ui" : true
+            "light_ui" : true,
+            "still" : "/assets/media/img/nupr_hero_still.jpg"
           }
         }, {
           "text" : {
             "bg_color" : "#F9F9F9",
-            "text" : "A new brand and creative direction for Northeastern University’s only non-partisan, student-led political magazine.",
+            "text" : "A new brand and creative direction for Northeastern University’s only non-affiliated, student-led political magazine.",
             "align" : "center"
           }
         }, {
@@ -35,28 +36,24 @@
         }, {
           "split" : {
             "left" : {
-              "text" : [
-                "A new brand and creative direction for Northeastern University’s only non-partisan, student-led political magazine."
-              ],
-              "text_color" : "#212121",
-              "bg_color" : "#F9F9F9"
+              "src" : "/assets/media/img/nupr_photograph.jpg"
             },
             "right" : {
-              "src" : "https://placeimg.com/720/900/nature"
+              "text" : "The brand is implemented in marketing outreach for the organization.",
+              "text_color" : "#212121",
+              "bg_color" : "#F9F9F9"
             }
           }
         }, {
-          "split" : {
-            "left" : {
-              "src" : "https://placeimg.com/720/900/nature"
-            },
-            "right" : {
-              "text" : [
-                "A new brand and creative direction for Northeastern University’s only non-partisan, student-led political magazine."
-              ],
-              "text_color" : "#212121",
-              "bg_color" : "#F9F9F9"
-            }
+          "text" : {
+            "bg_color" : "#F9F9F9",
+            "text" : "The <a href=\"http://nupoliticalreview.com/\" target=\"_blank\">NUPR website</a>is where student-written blog posts and full length articles are regularly posted and read by the Northeastern community. Using WordPress, we created a site that better reflects the high caliber of writing Northeastern students produce.",
+            "align" : "center"
+          }
+        }, {
+          "image" : {
+            "src" : "/assets/media/img/nupr_website_device_mockup.jpg",
+            "bg_color" : "#F9F9F9"
           }
         }
       ]
@@ -64,67 +61,283 @@
     "get-with-the-times" : {
       "title" : "Get With The Times",
       "slug" : "get-with-the-times",
-      "lede" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-      "thumbnail" : "https://placeimg.com/480/680/people",
+      "lede" : "A public action campaign exposing the United States’ lack of paid family leave.",
+      "thumbnail" : "/assets/media/img/gwtt_thumbnail.jpg",
+      "border_color" : "#2D2771",
       "gradient" : {
-        "from" : "#392E7A",
-        "to" : "#CE6EAD"
-      }
+        "from" : "#2D2771",
+        "to" : "#CF6FAC"
+      },
+      "content" : [
+        {
+          "video" : {
+            "src" : "/assets/media/video/gwtt_logo.mp4",
+            "still" : "/assets/media/img/gwtt_hero_still.jpg"
+          }
+        }, {
+          "text" : {
+            "bg_color" : "#F9F9F9",
+            "text" : "A public action campaign exposing the United States’ lack of paid family leave. Compared to most countries around the world, the US is incredibly behind in implementing this legislation.",
+            "align" : "center"
+          }
+        }, {
+          "image" : {
+            "src" : "/assets/media/img/gwtt_posters.jpg"
+          }
+        }, {
+          "split" : {
+            "left" : {
+              "text" : "The vintage imagery used throughout the campaign is meant to illustrate just how behind the U.S. is, while the bright color palette and photo treatments keep the campaign current.",
+              "text_color" : "#212121",
+              "bg_color" : "#F9F9F9"
+            },
+            "right" : {
+              "src" : "/assets/media/img/gwtt_postcards.jpg"
+            }
+          }
+        }, {
+          "image" : {
+            "src" : "/assets/media/img/gwtt_environment.jpg",
+            "bg_color" : "#F9F9F9"
+          }
+        }, {
+          "split" : {
+            "left" : {
+              "src" : "/assets/media/img/gwtt_web.jpg"
+            },
+            "right" : {
+              "text" : "People can sign a petition for paid leave at <a href=\"http://getwiththetimes.us/\" target=\"_blank\">getwiththetimes.us</a>, a custom site I designed in collaboration with developer Mike Wagz.",
+              "text_color" : "#212121",
+              "bg_color" : "#F9F9F9"
+            }
+          }
+        }
+      ]
     },
-    "illustration" : {
-      "title" : "Illustration",
-      "slug" : "illustration",
-      "lede" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-      "thumbnail" : "https://placeimg.com/420/420/people",
+    "illustration-posters" : {
+      "title" : "Illustration & Posters",
+      "slug" : "illustration-posters",
+      "lede" : "Various artworks from here and there.",
+      "thumbnail" : "/assets/media/img/illust_thumbnail.jpg",
+      "border_color" : "#FFC7C7",
       "gradient" : {
         "from" : "#6CC497",
         "to" : "#9FC9EB"
       },
-      "border_color" : "#CC0000"
-    },
-    "posters" : {
-      "title" : "Posters",
-      "slug" : "posters",
-      "lede" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-      "thumbnail" : "https://placeimg.com/740/490/people",
+      "content" : [
+        {
+          "image" : {
+            "src" : "/assets/media/img/thehook.jpg"
+          }
+        }, {
+          "image" : {
+            "src" : "/assets/media/img/trump_illustration.jpg"
+          }
+        }, {
+          "image" : {
+            "src" : "/assets/media/img/antigone_mockup.jpg",
+            "bg_color" : "#F9F9F9"
+          }
+        }, {
+          "image": {
+            "src" : "/assets/media/img/dfw_illustration.jpg"
+          }
+        }, {
+        "image" : {
+          "src" : "/assets/media/img/3trips_poster.jpg",
+          "bg_color" : "#F9F9F9"
+        }
+      }
+    ]
+  },
+    "chargerx" : {
+      "title" : "ChargeRx",
+      "slug" : "chargerx",
+      "lede" : "Total brand development for a <a href=\"http://thechargerx.com/\" target=\"_blank\">mobile phone charging service</a> providing compact, stackable chargers to healthcare facilities.",
+      "thumbnail" : "/assets/media/img/chargerx_thumbnail.jpg",
+      "border_color" : "#006fb9",
       "gradient" : {
-        "from" : "#2A338F",
-        "to" : "#F4DBDB"
+        "from" : "#006fb9",
+        "to" : "#d1d1d1"
       },
-      "border_color" : "#CC0000"
+      "content" : [
+        {
+          "video" : {
+            "src" : "/assets/media/video/chargerx_render.mp4",
+            "still" : "/assets/media/img/chargerx_hero_still.jpg"
+          }
+        }, {
+          "text" : {
+            "bg_color" : "#F9F9F9",
+            "text" : "Total brand development for a mobile phone charging service providing compact, stackable chargers to healthcare facilities.",
+            "align" : "center"
+          }
+        }, {
+          "image" : {
+            "src" : "/assets/media/img/chargerx_logo.jpg"
+          }
+        }, {
+          "split" : {
+            "left" : {
+              "text" : "Line drawings of the charger stack were created to be used on packaging, manuals, and other marketing collateral.",
+              "text_color" : "#212121",
+              "bg_color" : "#F9F9F9"
+            },
+            "right" : {
+              "src" : "/assets/media/img/chargerx_illustration.jpg"
+            }
+          }
+        }, {
+          "image" : {
+            "src" : "/assets/media/img/chargerx_packaging.jpg",
+            "bg_color" : "#F9F9F9"
+          }
+        }, {
+          "split" : {
+            "left" : {
+              "src" : "/assets/media/img/chargerx_photo1.jpg"
+            },
+            "right" : {
+              "text" : "The labels on the device were designed to be simple and understandable to any patient.",
+              "text_color" : "#212121",
+              "bg_color" : "#F9F9F9"
+              }
+            }
+          }, {
+          "image" : {
+            "src" : "/assets/media/img/chargerx_instructions.png"
+          }
+        }, {
+          "split" : {
+            "left" : {
+              "text" : "All designs and photography were done in collaboration with Isabel Mendez, Christina Allan, and Josh Svoboda through <a href=\"http://www.northeastern.edu/scout/Scout\" target=\"_blank\">Scout</a>, a student-led design studio at Northeastern University.",
+              "text_color" : "#212121",
+              "bg_color" : "#F9F9F9"
+            },
+            "right" : {
+              "src" : "/assets/media/img/chargerx_photo2.jpg"
+            }
+          }
+        }
+      ]
     },
     "the-story-never-ends" : {
       "title" : "The Story Never Ends",
       "slug" : "the-story-never-ends",
-      "lede" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-      "thumbnail" : "https://placeimg.com/380/380/people",
+      "lede" : "Album artwork for the artist Lauv.",
+      "thumbnail" : "/assets/media/img/lauv_thumbnail.jpg",
+      "border_color" : "#8484C2",
       "gradient" : {
-        "from" : "#94AEBF",
-        "to" : "#E2C9B5"
+        "from" : "#8484C2",
+        "to" : "#ECD7C6"
       },
-      "border_color" : "#CC0000"
+      "content" : [
+         {
+          "image" : {
+            "src" : "/assets/media/img/lauv_hero.jpg",
+            "bg_color" : "#F9F9F9"
+          }
+        }, {
+          "split" : {
+            "left" : {
+              "src" : "/assets/media/img/lauv_split.jpg"
+            },
+            "right" : {
+              "text" : "Lauv is an LA-based R&B Pop artist. So far, The Story Never Ends has gained over 1 million plays on Spotify.",
+              "text_color" : "#212121",
+              "bg_color" : "#F9F9F9"
+            }
+          }
+        }
+      ]
     },
+
     "flocabulary" : {
       "title" : "Flocabulary",
       "slug" : "flocabulary",
-      "lede" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.",
-      "thumbnail" : "https://placeimg.com/490/330/people",
+      "lede" : "A Brooklyn-based company that creates educational hip hop videos for students in grades K-12.",
+      "thumbnail" : "/assets/media/img/flocab_thumbnail.jpg",
+      "border_color" : "#fc4d25",
       "gradient" : {
-        "from" : "#67578F",
-        "to" : "#F1BD96"
+        "from" : "#f76c19",
+        "to" : "#ead061"
       },
-      "border_color" : "#CC0000"
+      "content" : [
+        {
+          "image" : {
+            "src" : "/assets/media/img/flocab_hero.jpg"
+          }
+        }, {
+          "text" : {
+            "bg_color" : "#F9F9F9",
+            "text" : "Flocabulary is a web-based learning program for all grades and subjects that uses educational hip-hop music to engage students and increase achievement.",
+            "align" : "center"
+          }
+        }, {
+          "video" : {
+            "src" : "/assets/media/video/flocab_halloween.mp4"
+          }
+        }, {
+          "split" : {
+            "left" : {
+              "text" : "As an art department intern, I helped create illustrations and set type for several videos. I worked on the illustrations for this video about coding alonside the art director. ",
+              "text_color" : "#212121",
+              "bg_color" : "#F9F9F9"
+            },
+            "right" : {
+              "src" : "/assets/media/img/flocab_coding.jpg"
+            }
+          }
+        }, {
+          "split" : {
+            "left" : {
+              "src" : "/assets/media/img/flocab_systems.jpg"
+            },
+            "right" : {
+              "text" : "I set all of the type for this video on human body systems and prepped the illustration files to be sent off to an animator.",
+              "text_color" : "#212121",
+              "bg_color" : "#F9F9F9"
+              }
+            }
+          }, {
+          "split" : {
+            "left" : {
+              "text" : "A large part of my job was being the sole video editor of The Week In Rap, a current events video produced every Thursday. I also created several Week In Rap Extra videos, which were about larger issues going on in the world today, such as the <a href=\"https://www.flocabulary.com/unit/week-in-rap-extra-refugee-crisis/\" target=\"_blank\">Syrian Refugee Crisis</a>.",
+              "text_color" : "#212121",
+              "bg_color" : "#F9F9F9"
+            },
+            "right" : {
+              "src" : "/assets/media/img/flocab_video.jpg"
+            }
+          }
+        }, {
+          "split" : {
+            "left" : {
+              "src" : "/assets/media/img/flocab_wirjr.jpg"
+            },
+            "right" : {
+              "text" : "Every week I created different infographics and illustrations The Week In Rap Junior, a current events video aimed specifically for grades 3-5. I also created worksheets to go along with video lessons.",
+              "text_color" : "#212121",
+              "bg_color" : "#F9F9F9"
+              }
+            }
+          }, {
+            "split" : {
+              "left" : {
+                "src" : "/assets/media/img/worksheet_left.jpg"
+              },
+              "right" : {
+                "src" : "/assets/media/img/worksheet_right.jpg"
+                }
+              }
+            }
+      ]
     }
   },
 
-  "work" : {
+  "home" : {
     "title" : "Work",
     "border_color" : "#2B2B2B"
-  },
-
-  "home" : {
-    "title" : "Home",
-    "border_color" : "#0010CB"
   },
 
   "about" : {
@@ -143,9 +356,8 @@
       { "label" : "Email", "link" : "mailto:jennifermheintz@gmail.com" },
       { "label" : "Instagram", "link" : "http://instagram.com/jennyheintz" },
       { "label" : "Twitter", "link" : "http://twitter.com/jennyheintz" },
-      { "label" : "LinkedIn", "link" : "#0" },
-      { "label" : "Behance", "link" : "#0" },
-      { "label" : "Vimeo", "link" : "#0" }
+      { "label" : "LinkedIn", "link" : "https://www.linkedin.com/in/jenniferheintz/" },
+      { "label" : "Vimeo", "link" : "https://vimeo.com/jenniferheintz" }
     ]
   }
 }

@@ -4,4 +4,50 @@ Preloader
 .preloader {
     .fixed();
     text-align: center;
+
+    &__inner {
+      position: relative;
+      .size(100%, 100%);
+    }
+
+    &__border {
+      display: inline-block;
+      position: absolute;
+      background-color: @black;
+
+      &--horizontal {
+        .size(100%, @30px);
+        transform: scaleX(0);
+      }
+
+      &--vertical {
+        .size(@30px, 100%);
+        transform: scaleY(0);
+      }
+
+      &--top {
+        top: 0;
+        left: 0;
+        transform-origin: left;
+      }
+
+      &--right {
+        top: 0;
+        right: 0;
+        transform-origin: top;
+      }
+
+      &--bottom {
+        bottom: 0;
+        left: 0;
+        transform-origin: left;
+      }
+
+      &--left {
+        top: 0;
+        left: 0;
+        transform-origin: bottom;
+      }
+    }
+
 }

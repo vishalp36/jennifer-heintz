@@ -8,36 +8,36 @@ import gsap from 'gsap'
 TweenLite.defaultEase = Expo.easeOut
 
 class Preloader {
-	
+
 	constructor(onComplete) {
-		
+
 		this.preloaded = onComplete
 		this.view = config.view
 		this.el = null
 	}
-	
+
 	init(req, done) {
 
 		classes.add(config.body, 'is-loading')
-		
+
 		ajax.get(`${config.BASE}data/data.json`, {
 	 		success: (object) => {
 				window._data = object.data
 				done()
 	 		}
  		})
-		
+
 		config.infos = sniffer.getInfos()
-        
+
 		this.createDOM()
 
 		done()
 	}
-	
+
 	createDOM() {
-		
+
 		const page = this.view.firstChild
-		
+
 		this.el = create({
 			selector: 'div',
 			styles: 'preloader',
@@ -63,13 +63,12 @@ class Preloader {
 
 		const tl = new TimelineMax({ paused: true, onComplete: () => {
 			done()
-			// call this.preloaded to bring the first route
 			this.preloaded()
 		}})
 		tl.to(this.el, 1, {autoAlpha: 1})
 		tl.restart()
 	}
-	
+
 	animateOut(req, done) {
 
 		const tl = new TimelineMax({ paused: true, onComplete: done })

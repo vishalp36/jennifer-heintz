@@ -8,74 +8,50 @@ import query from 'query-dom-components'
 import biggie from '@utils/biggie'
 
 class Default {
-    
+
   constructor(opt = {}) {
-        
+
     this.view = config.view
     this.page = null
     this.a = null
   }
-  
+
   init(req, done, options) {
 
     const opts = options || { cache: true, sub: false }
-    
+
     const view = this.view
     const ready = this.ready.bind(this, done)
     const page = this.page = biggie.page(req, view, opts, ready)
-    
+
     this.setBorderColor(req)
   }
 
   ready() {
 
     this.ui = query({ el: this.page })
-    
+
     this.a = domselect.all('a', this.page)
-    
+
     biggie.bind.add(this.a)
-    
-    this.ui.lazy && this.lazyLoad()
   }
-  
+
   setBorderColor(req) {
-    
+
     const border = document.querySelector('.js-border')
     const data = window._data
     const route = req.route === '/' ? 'home' : req.route.slice(1)
     const color = req.params.id ? data.projects[req.params.id].border_color : data[route].border_color
-    
+
     border.style.borderColor = color
   }
-  
-  lazyLoad() {
-		
-		[...this.ui.lazy].forEach(el => {
 
-        const img = document.createElement('img')
-        const image = el.getAttribute('data-src')
-            
-        img.onload = () => {
-                
-          el.style['background-image'] = `url('${image}')`
-					
-          if (el.nextElementSibling) {
-            setTimeout(_ => {
-            	requestAnimationFrame(_ => classes.add(el.nextElementSibling, 'hidden'))
-  					}, 1000)
-          }
-        }
-
-        img.src = image
-    })
-	}
-  
   resize(width, height) {
-      
+
     config.height = height
     config.width = width
   }
-  
+
   destroy() {
 
     biggie.bind.remove(this.a)

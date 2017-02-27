@@ -60,6 +60,26 @@ class Home extends Default {
 		document.body.appendChild(this.canvas)
 	}
 
+	lazyLoad() {
+
+		[...this.ui.lazy].forEach(el => {
+
+			const img = document.createElement('img')
+			const image = el.getAttribute('data-src')
+
+			img.onload = () => {
+
+				el.style['background-image'] = `url('${image}')`
+
+				if (el.nextElementSibling) {
+					requestAnimationFrame(_ => classes.add(el.nextElementSibling, 'hidden'))
+				}
+			}
+
+			img.src = image
+		})
+	}
+
 	initSmooth() {
 
 		this.smooth = new Custom({
@@ -100,11 +120,29 @@ class Home extends Default {
 
 		classes.add(config.body, `is-${this.slug}`)
 
-		TweenLite.to(this.page, 1, {
-			autoAlpha: 1,
-			ease: Expo.easeInOut,
-			onComplete: done
-		})
+		const tl = new TimelineMax({paused: true, onComplete: _ => {
+			done()
+
+			this.lazyLoad()
+		}})
+
+		if (!req.previous) {
+
+			tl.set(this.page, {autoAlpha: 1})
+			tl.staggerFromTo(this.ui.tile, 1, {
+				y: 100,
+				autoAlpha: 0
+			}, {
+				delay: 0.6,
+				y: 0,
+				autoAlpha: 1
+			}, 0.05)
+			tl.restart()
+
+		} else {
+			tl.to(this.page, 1, {autoAlpha: 1})
+			tl.restart()
+		}
 	}
 
 	animateOut(req, done) {

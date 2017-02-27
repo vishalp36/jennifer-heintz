@@ -5,7 +5,7 @@ import ajax from 'please-ajax'
 import create from 'dom-create-element'
 import gsap from 'gsap'
 
-TweenLite.defaultEase = Expo.easeOut
+TweenLite.defaultEase = Expo.easeInOut
 
 class Preloader {
 
@@ -42,11 +42,18 @@ class Preloader {
 			selector: 'div',
 			styles: 'preloader',
 			html: `
+			<div class="preloader__inner">
 				<div class="vertical-align">
-					<div class="vertical-align__item">
-						<p>Preloader</p>
+					<div class="preloader__text vertical-align__item">
+						<h1 class="preloader__name">Jennifer Heintz</h1>
+						<h2 class="preloader__subtitle">Designer & Illustrator</h2>
 					</div>
 				</div>
+				<div class="preloader__border preloader__border--top preloader__border--horizontal js-top"></div>
+				<div class="preloader__border preloader__border--right preloader__border--vertical js-right"></div>
+				<div class="preloader__border preloader__border--bottom preloader__border--horizontal js-bottom"></div>
+				<div class="preloader__border preloader__border--left preloader__border--vertical js-left"></div>
+			</div>
 			`
 		})
 
@@ -61,18 +68,35 @@ class Preloader {
 
 	animateIn(req, done) {
 
+		const borders = document.querySelectorAll('.preloader__border')
+		const border = document.querySelector('.js-border')
+		const text = document.querySelector('.preloader__text')
+
 		const tl = new TimelineMax({ paused: true, onComplete: () => {
 			done()
 			this.preloaded()
 		}})
-		tl.to(this.el, 1, {autoAlpha: 1})
+
+		tl.to(text, 1.75, {autoAlpha: 1, ease: Linear.easeNone}, 'start')
+		tl.staggerTo(borders, .4, {
+			cycle: {
+				transform: (i) => i === 0 || i === 2 ? 'scaleX(1)' : 'scaleY(1)'
+			}
+		}, 0.3, 'start')
+		tl.set(border, { opacity: 1 })
 		tl.restart()
 	}
 
 	animateOut(req, done) {
 
+		const text = document.querySelector('.preloader__text')
+		const ui = document.querySelectorAll('.js-nav')
+
 		const tl = new TimelineMax({ paused: true, onComplete: done })
-		tl.to(this.el, 1, {autoAlpha: 0})
+
+		tl.staggerTo(text.children, 1, {autoAlpha: 0}, 0.05, 'out')
+		tl.set(this.el, {autoAlpha: 0})
+		tl.to(ui, 1.5, {autoAlpha: 1}, 'out')
 		tl.restart()
 	}
 

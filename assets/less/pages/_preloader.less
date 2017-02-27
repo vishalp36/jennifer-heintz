@@ -10,10 +10,27 @@ Preloader
       .size(100%, 100%);
     }
 
+    &__text {
+      font-family: @nav-font;
+      .hidden();
+    }
+
+    &__name {
+      font-size: @100px;
+      color: @blue;
+    }
+
+    &__subtitle {
+      font-size: @40px;
+      color: @black;
+      line-height: 0.8;
+    }
+
     &__border {
       display: inline-block;
       position: absolute;
       background-color: @black;
+      z-index: 9999;
 
       &--horizontal {
         .size(100%, @30px);
@@ -28,25 +45,25 @@ Preloader
       &--top {
         top: 0;
         left: 0;
-        transform-origin: left;
+        transform-origin: top left;
       }
 
       &--right {
         top: 0;
         right: 0;
-        transform-origin: top;
+        transform-origin: top right;
       }
 
       &--bottom {
         bottom: 0;
         left: 0;
-        transform-origin: left;
+        transform-origin: bottom right;
       }
 
       &--left {
         top: 0;
         left: 0;
-        transform-origin: bottom;
+        transform-origin: bottom left;
       }
     }
 

@@ -2,9 +2,33 @@
 CSS3 @keyframes
 ----- */
 /* -----
-Spinner
+Glitchy
 ----- */
-@keyframes spin {
-	from {transform: rotate(0deg);}
-	to {transform: rotate(360deg);}
+@keyframes glitch-1 {
+    0% {
+        transform: translate(0)
+    }
+    33% {
+        transform: translate(-3px, 2px)
+    }
+    66% {
+        transform: translate(2px, -3px)
+    }
+    to {
+        transform: translate(0)
+    }
+}
+@keyframes glitch-2 {
+    0% {
+        transform: translate(0)
+    }
+    33% {
+        transform: translate(-3px, -1px)
+    }
+    66% {
+        transform: translate(3px, 2px)
+    }
+    to {
+        transform: translate(0)
+    }
 }

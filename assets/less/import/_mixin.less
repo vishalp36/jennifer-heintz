@@ -42,3 +42,26 @@ Hover
 .hover-bg(@color){
   &:hover{background-color: @color;}
 }
+
+.glitch(@content, @color1, @color2, @timing) {
+  &:before,
+  &:after {
+    content: @content;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &:before {
+    z-index: -1;
+    color: @color1;
+    animation: glitch-1 @timing cubic-bezier(.25, .46, .45, .94) both infinite;
+  }
+
+  &:after {
+    z-index: -2;
+    color: @color2;
+    animation: glitch-2 @timing cubic-bezier(.25, .46, .45, .94) reverse both infinite;
+  }
+}

@@ -15,17 +15,30 @@
       {{/video}}
     </article>
   {{/content}}
-  
-  
+
+
   <!-- todo: add {{#light_ui}}data-light-ui{{/light_ui}} -->
   <article class="slide js-slides">
-    <a class="block block--next-project js-next-project" href="/work/{{ next.slug }}" style="background-image: linear-gradient(135deg, {{ next.gradient.from }} 0%, {{ next.gradient.to }} 100%)">
-      <div class="vertical-align">
-        <div class="next-project__inner vertical-align__item">
-          <p class="next-project__label">Next Project</p>
-          <h1 class="next-project__title">{{ next.title }}</h1>
+
+    <div class="project-nav__img js-previous-project" style="background-image: url('{{ prev.hero }}')"></div>
+    <div class="project-nav__img js-next-project" style="background-image: url('{{ next.hero }}')"></div>
+
+    <div class="block block--split">
+
+      <a class="block block--split__column block--project-nav js-project-nav-link" data-direction="previous" href="/work/{{ prev.slug }}">
+        <div class="project-nav__inner">
+          <p class="project-nav__label">Previous</p>
+          <h1 class="project-nav__title">{{ prev.title }}</h1>
         </div>
-      </div>
-    </a>
+      </a>
+
+      <a class="block block--split__column block--project-nav js-project-nav-link" data-direction="next" href="/work/{{ next.slug }}">
+        <div class="project-nav__inner">
+          <p class="project-nav__label">Next</p>
+          <h1 class="project-nav__title">{{ next.title }}</h1>
+        </div>
+      </a>
+
+    </div>
   </article>
 </section>

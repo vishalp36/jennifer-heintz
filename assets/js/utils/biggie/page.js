@@ -48,8 +48,6 @@ export default (req, view, options, done) => {
     }
   })
 
-  console.log(data)
-
   view.appendChild(page)
 
   if(!cache[id] || !options.cache) {

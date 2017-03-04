@@ -1,6 +1,7 @@
 import config from 'config'
 import utils from 'utils'
 import classes from 'dom-classes'
+import { on, off } from 'dom-event'
 import Default from './default'
 import Manager from 'slider-manager'
 
@@ -11,6 +12,9 @@ class Single extends Default {
 		super(opt)
 
 		this.slug = 'single'
+
+		this.isProjectNavClick = false
+		this.onProjectNavClick = this.onProjectNavClick.bind(this)
 	}
 
 	init(req, done) {
@@ -25,6 +29,12 @@ class Single extends Default {
 		this.slides = Array.from(this.ui.slides)
 
 		this.initSlides()
+
+		this.setProjectNavigation(config.width, config.height)
+
+		this.ui.projectNavLink.forEach(link => {
+			on(link, 'click', this.onProjectNavClick)
+		})
 
 		done()
 	}
@@ -99,6 +109,19 @@ class Single extends Default {
 		})
 	}
 
+	setProjectNavigation(width, height) {
+
+		this.ui.previousProject.style.clip = `rect(0px ${width / 2}px ${height}px 0px)`
+		this.ui.nextProject.style.clip = `rect(0px ${width}px ${height}px ${width / 2}px)`
+	}
+
+	onProjectNavClick(evt) {
+
+		this.isProjectNavClick = true
+
+		this.direction = evt.currentTarget.dataset.direction
+	}
+
 	animateIn(req, done) {
 
 		classes.add(config.body, `is-${this.slug}`)
@@ -140,7 +163,6 @@ class Single extends Default {
 			})
 			tl.restart()
 		}
-
 	}
 
 	animateOut(req, done) {
@@ -149,13 +171,39 @@ class Single extends Default {
 
 		const tl = new TimelineMax({ paused: true, onComplete: done })
 
-		tl.to(this.page, 1, { autoAlpha: 0, ease: Expo.easeInOut })
-		tl.restart()
+		if (req.params.id && this.isProjectNavClick) {
+
+			const el = this.ui[`${this.direction}Project`]
+
+			tl.set(el, {
+				zIndex: 2
+			})
+			tl.to(el, 1, {
+				clip: `rect(0px ${config.width}px ${config.height}px 0px)`,
+				ease: Expo.easeOut
+			})
+			tl.to(this.page, .4, { autoAlpha: 0 })
+			tl.restart()
+
+		} else {
+
+			tl.to(this.page, 1, { autoAlpha: 0, ease: Expo.easeInOut })
+			tl.restart()
+		}
+	}
+
+	resize(width, height) {
+
+		this.setProjectNavigation(width, height)
 	}
 
 	destroy(req, done) {
 
 		super.destroy()
+
+		this.ui.projectNavLink.forEach(link => {
+			off(link, 'click', this.onProjectNavClick)
+		})
 
 		this.slider.destroy()
 

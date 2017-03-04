@@ -147,14 +147,10 @@ class Single extends Default {
 
 		classes.remove(config.body, `is-${this.slug}`)
 
-		TweenLite.to(this.page, 1, {
-			autoAlpha: 0,
-			ease: Expo.easeInOut,
-			clearProps: 'all',
-			onComplete: _ => {
-				done()
-				this.setNavColor()
-		}})
+		const tl = new TimelineMax({ paused: true, onComplete: done })
+
+		tl.to(this.page, 1, { autoAlpha: 0, ease: Expo.easeInOut })
+		tl.restart()
 	}
 
 	destroy(req, done) {

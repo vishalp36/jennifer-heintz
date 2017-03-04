@@ -1,7 +1,7 @@
 import config from 'config'
+import ajax from 'please-ajax'
 import sniffer from 'sniffer'
 import classes from 'dom-classes'
-import ajax from 'please-ajax'
 import create from 'dom-create-element'
 import gsap from 'gsap'
 
@@ -68,8 +68,8 @@ class Preloader {
 
 	animateIn(req, done) {
 
-		const borders = document.querySelectorAll('.preloader__border')
-		const border = document.querySelector('.js-border')
+		const preloaderBorders = document.querySelectorAll('.preloader__border')
+		const appBorder = document.querySelector('.js-border')
 		const text = document.querySelector('.preloader__text')
 
 		const tl = new TimelineMax({ paused: true, onComplete: () => {
@@ -78,12 +78,12 @@ class Preloader {
 		}})
 
 		tl.to(text, 1.75, {autoAlpha: 1, ease: Linear.easeNone}, 'start')
-		tl.staggerTo(borders, .4, {
+		tl.staggerTo(preloaderBorders, .4, {
 			cycle: {
 				transform: (i) => i === 0 || i === 2 ? 'scaleX(1)' : 'scaleY(1)'
 			}
 		}, 0.3, 'start')
-		tl.set(border, { opacity: 1 })
+		tl.set(appBorder, { opacity: 1 })
 		tl.restart()
 	}
 
@@ -94,9 +94,9 @@ class Preloader {
 
 		const tl = new TimelineMax({ paused: true, onComplete: done })
 
-		tl.staggerTo(text.children, 1, {autoAlpha: 0}, 0.05, 'out')
-		tl.set(this.el, {autoAlpha: 0})
-		tl.to(ui, 1.5, {autoAlpha: 1}, 'out')
+		tl.staggerTo(text.children, 1, { autoAlpha: 0 }, 0.05, 'out')
+		tl.set(this.el, { autoAlpha: 0 })
+		tl.to(ui, 1.5, { autoAlpha: 1 }, 'out')
 		tl.restart()
 	}
 

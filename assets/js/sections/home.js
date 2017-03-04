@@ -60,33 +60,16 @@ class Home extends Default {
 		document.body.appendChild(this.canvas)
 	}
 
-	lazyLoad() {
-
-		[...this.ui.lazy].forEach(el => {
-
-			const img = document.createElement('img')
-			const image = el.getAttribute('data-src')
-
-			img.onload = () => {
-
-				el.style['background-image'] = `url('${image}')`
-
-				if (el.nextElementSibling) {
-					requestAnimationFrame(_ => classes.add(el.nextElementSibling, 'hidden'))
-				}
-			}
-
-			img.src = image
-		})
-	}
-
 	initSmooth() {
 
 		this.smooth = new Custom({
 			section: this.ui.smooth,
 			opacity: this.ui.button,
-			noscrollbar: true,
-			ease: 0.1
+			noscrollbar: false,
+			ease: 0.1,
+			vs: {
+				mouseMultiplier: 0.25
+			}
 		})
 
 		this.smooth.init()
@@ -122,13 +105,12 @@ class Home extends Default {
 
 		const tl = new TimelineMax({paused: true, onComplete: _ => {
 			done()
-
 			this.lazyLoad()
 		}})
 
 		if (!req.previous) {
 
-			tl.set(this.page, {autoAlpha: 1})
+			tl.set(this.page, { autoAlpha: 1 })
 			tl.staggerFromTo(this.ui.tile, 1, {
 				y: 100,
 				autoAlpha: 0
@@ -140,6 +122,7 @@ class Home extends Default {
 			tl.restart()
 
 		} else {
+
 			tl.to(this.page, 1, {autoAlpha: 1})
 			tl.restart()
 		}
@@ -158,7 +141,7 @@ class Home extends Default {
 
 		this.draw(this.c)
 
-		const time = .8
+		const time = 0.6
 
 		const tl = new TimelineMax({paused: true, onComplete: done})
 
@@ -187,10 +170,30 @@ class Home extends Default {
 
 		this.canvas.parentNode.removeChild(this.canvas)
 
-		const tl = new TimelineMax({paused: true, onComplete: done})
+		const tl = new TimelineMax({ paused: true, onComplete: done })
 
 		tl.to(this.page, 1, { autoAlpha: 0, ease: Expo.easeInOut })
 		tl.restart()
+	}
+
+	lazyLoad() {
+
+		[...this.ui.lazy].forEach(el => {
+
+			const img = document.createElement('img')
+			const image = el.getAttribute('data-src')
+
+			img.onload = () => {
+
+				el.style['background-image'] = `url('${image}')`
+
+				if (el.nextElementSibling) {
+					requestAnimationFrame(_ => classes.add(el.nextElementSibling, 'hidden'))
+				}
+			}
+
+			img.src = image
+		})
 	}
 
 	draw(c) {

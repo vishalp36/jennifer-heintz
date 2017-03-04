@@ -59,22 +59,20 @@ class About extends Default {
 
 		classes.add(config.body, `is-${this.slug}`)
 
-		TweenLite.to(this.page, 1, {
-			autoAlpha: 1,
-			ease: Expo.easeInOut,
-			onComplete: done
-		})
+		const tl = new TimelineMax({ paused: true, onComplete: done })
+
+		tl.to(this.page, 1, { autoAlpha: 1, ease: Expo.easeInOut })
+		tl.restart()
 	}
 
 	animateOut(req, done) {
 
 		classes.remove(config.body, `is-${this.slug}`)
 
-		TweenLite.to(this.page, 1, {
-			autoAlpha: 0,
-			ease: Expo.easeInOut,
-			onComplete: done
-		})
+		const tl = new TimelineMax({ paused: true, onComplete: done })
+
+		tl.to(this.page, 1, { autoAlpha: 0, ease: Expo.easeInOut })
+		tl.restart()
 	}
 
 	destroy(req, done) {

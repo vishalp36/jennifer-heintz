@@ -2,72 +2,70 @@
 Preloader
 ----- */
 .preloader {
-    .fixed();
-    text-align: center;
+  .fixed();
+  text-align: center;
 
-    &__inner {
-      position: relative;
-      .size(100%, 100%);
+  &__inner {
+    position: relative;
+    .size(100%, 100%);
+  }
+
+  &__text {
+    font-family: @nav-font;
+    .hidden();
+  }
+
+  &__name {
+    font-size: @100px;
+    color: @blue;
+    position: relative;
+    display: inline-block;
+  }
+
+  &__subtitle {
+    font-size: @40px;
+    color: @black;
+    line-height: 0.8;
+  }
+
+  &__border {
+    display: inline-block;
+    position: absolute;
+    background-color: @black;
+    z-index: 9999;
+
+    &--horizontal {
+      .size(100%, @30px);
+      transform: scaleX(0);
     }
 
-    &__text {
-      font-family: @nav-font;
-      .hidden();
+    &--vertical {
+      .size(@30px, 100%);
+      transform: scaleY(0);
     }
 
-    &__name {
-      font-size: @100px;
-      color: @blue;
-      position: relative;
-      display: inline-block;
-      .glitch('Jennifer Heintz', @pink, @green, .2s);
+    &--top {
+      top: 0;
+      left: 0;
+      transform-origin: top left;
     }
 
-    &__subtitle {
-      font-size: @40px;
-      color: @black;
-      line-height: 0.8;
+    &--right {
+      top: 0;
+      right: 0;
+      transform-origin: top right;
     }
 
-    &__border {
-      display: inline-block;
-      position: absolute;
-      background-color: @black;
-      z-index: 9999;
-
-      &--horizontal {
-        .size(100%, @30px);
-        transform: scaleX(0);
-      }
-
-      &--vertical {
-        .size(@30px, 100%);
-        transform: scaleY(0);
-      }
-
-      &--top {
-        top: 0;
-        left: 0;
-        transform-origin: top left;
-      }
-
-      &--right {
-        top: 0;
-        right: 0;
-        transform-origin: top right;
-      }
-
-      &--bottom {
-        bottom: 0;
-        left: 0;
-        transform-origin: bottom right;
-      }
-
-      &--left {
-        top: 0;
-        left: 0;
-        transform-origin: bottom left;
-      }
+    &--bottom {
+      bottom: 0;
+      left: 0;
+      transform-origin: bottom right;
     }
 
+    &--left {
+      top: 0;
+      left: 0;
+      transform-origin: bottom left;
+    }
+  }
 }

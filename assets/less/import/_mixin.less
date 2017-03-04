@@ -43,10 +43,12 @@ Hover
   &:hover{background-color: @color;}
 }
 
-.glitch(@content, @color1, @color2, @timing) {
+.hover-glitch(@color1, @color2, @timing) {
+  position: relative;
+
   &:before,
   &:after {
-    content: @content;
+    content: attr(data-label);
     display: block;
     position: absolute;
     top: 0;
@@ -56,12 +58,21 @@ Hover
   &:before {
     z-index: -1;
     color: @color1;
-    animation: glitch-1 @timing cubic-bezier(.25, .46, .45, .94) both infinite;
   }
 
   &:after {
     z-index: -2;
     color: @color2;
-    animation: glitch-2 @timing cubic-bezier(.25, .46, .45, .94) reverse both infinite;
+  }
+
+  &:hover {
+
+    &:before {
+      animation: glitch-1 @timing cubic-bezier(.25, .46, .45, .94) both infinite;
+    }
+
+    &:after {
+      animation: glitch-2 @timing cubic-bezier(.25, .46, .45, .94) reverse both infinite;
+    }
   }
 }

@@ -2,7 +2,7 @@
   <div class="vertical-align__item">
     <div class="contact">
       {{#links}}
-        <a class="contact__link" target="_blank" href="{{ link }}">{{ label }}</a>
+        <a class="contact__link" target="_blank" href="{{ link }}" data-label="{{ label }}">{{ label }}</a>
       {{/links}}
     </div>
   </div>

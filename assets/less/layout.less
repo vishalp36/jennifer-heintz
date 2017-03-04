@@ -26,6 +26,24 @@ html {
 
 body {
 	background-color: #f9f9f9;
+
+	&.is-home {
+		.nav__link--work {
+			.active();
+		}
+	}
+
+	&.is-about {
+		.nav__link--about {
+			.active();
+		}
+	}
+
+	&.is-contact {
+		.nav__link--contact {
+			.active();
+		}
+	}
 }
 
 /* -----
@@ -86,7 +104,7 @@ App UI
 		text-decoration: none;
 		padding: @16px;
 		z-index: 999;
-		transition: color .4s;
+		transition: color .4s, filter 1s;
 		transition-delay: .2s;
 
 		span {

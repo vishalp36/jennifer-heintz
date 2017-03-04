@@ -89,6 +89,12 @@ App UI
 		transition: color .4s;
 		transition-delay: .2s;
 
+		span {
+			position: relative;
+			display: inline-block;
+			.hover-glitch(@green, @pink, .3s);
+		}
+
 		.hidden();
 
 		@media (max-width: 1240px) {

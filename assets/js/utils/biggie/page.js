@@ -14,26 +14,41 @@ export default (req, view, options, done) => {
   const projects = window._data.projects
   const route = req.route === '/' ? 'home' : req.route.slice(1)
   const data = req.params.id ? projects[req.params.id] : window._data[route]
-  const array = []
+
+  data.tiles = []
 
   for (let project in projects) {
-    array.push({
+    data.tiles.push({
       'project' : projects[project]
     })
   }
 
-  data.tiles = array
-
   data.tiles.forEach(tile => {
+
     const index = data.tiles.indexOf(tile)
     const next = index === data.tiles.length - 1 ? 0 : index + 1
+    const prev = index === 0 ? data.tiles.length -1 : index - 1
+
+    const nextHeroBlock = data.tiles[next].project.content[0]
+    const nextHeroImgSrc = nextHeroBlock.image ? nextHeroBlock.image.src : nextHeroBlock.video.still
+
+    const prevHeroBlock = data.tiles[prev].project.content[0]
+    const prevHeroImgSrc = prevHeroBlock.image ? prevHeroBlock.image.src : prevHeroBlock.video.still
 
     tile.project['next'] = {
       title: data.tiles[next].project.title,
       slug: data.tiles[next].project.slug,
-      gradient: data.tiles[next].project.gradient
+      hero: nextHeroImgSrc
+    }
+
+    tile.project['prev'] = {
+      title: data.tiles[prev].project.title,
+      slug: data.tiles[prev].project.slug,
+      hero: prevHeroImgSrc
     }
   })
+
+  console.log(data)
 
   view.appendChild(page)
 

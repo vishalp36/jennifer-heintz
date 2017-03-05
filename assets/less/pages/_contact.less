@@ -34,3 +34,24 @@
     }
   }
 }
+
+.wagz {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: rotate(90deg) translateY(-80%);
+
+  @media (max-width: 700px) {
+    font-size: @14px;
+    transform: rotate(90deg) translateY(-60%);
+  }
+
+	a {
+		transition: opacity .8s;
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}

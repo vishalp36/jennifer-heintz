@@ -39,7 +39,7 @@
               "src" : "/assets/media/img/nupr_photograph.jpg"
             },
             "right" : {
-              "text" : "The brand is implemented in marketing outreach for the organization.",
+              "text" : "The brand is implemented throughout the organization's marketing collateral for student outreach.",
               "text_color" : "#212121",
               "bg_color" : "#F9F9F9"
             }
@@ -47,7 +47,7 @@
         }, {
           "text" : {
             "bg_color" : "#F9F9F9",
-            "text" : "The <a href=\"http://nupoliticalreview.com/\" target=\"_blank\" data-label=\"NUPR Website\">NUPR website</a> is where student-written blog posts and full length articles are regularly posted and read by the Northeastern community. Using WordPress, we created a site that better reflects the high caliber of writing Northeastern students produce.",
+            "text" : "The <a href=\"http://nupoliticalreview.com/\" target=\"_blank\" data-label=\"NUPR website\">NUPR website</a> is where blog posts and full-length articles are regularly posted and read by the Northeastern community. Using WordPress, we created a site that reflects the high calliber writing of Northeastern students.",
             "align" : "center"
           }
         }, {
@@ -78,7 +78,7 @@
         }, {
           "text" : {
             "bg_color" : "#F9F9F9",
-            "text" : "A public action campaign exposing the United States’ lack of paid family leave. Compared to most countries around the world, the US is incredibly behind in implementing this legislation.",
+            "text" : "A public action campaign exposing the United States’ lack of paid family leave. Compared to most countries around the world, the US is still incredibly behind in implementing paid leave legislation.",
             "align" : "center"
           }
         }, {
@@ -88,7 +88,7 @@
         }, {
           "split" : {
             "left" : {
-              "text" : "The vintage imagery used throughout the campaign is meant to illustrate just how behind the U.S. is, while the bright color palette and photo treatments keep the campaign current.",
+              "text" : "The vintage imagery is juxtaposed with a bright color palette and photo treatments that keep the campaign current.",
               "text_color" : "#212121",
               "bg_color" : "#F9F9F9"
             },
@@ -107,7 +107,7 @@
               "src" : "/assets/media/img/gwtt_web.jpg"
             },
             "right" : {
-              "text" : "People can sign a petition for paid leave at <a href=\"http://getwiththetimes.us/\" target=\"_blank\">getwiththetimes.us</a>, a custom site I designed in collaboration with developer Mike Wagz.",
+              "text" : "People can sign a petition for paid leave at <a href=\"http://getwiththetimes.us/\" target=\"_blank\">getwiththetimes.us</a>, a custom site I designed in collaboration with developer, Mike Wagz.",
               "text_color" : "#212121",
               "bg_color" : "#F9F9F9"
             }
@@ -181,7 +181,7 @@
         }, {
           "split" : {
             "left" : {
-              "text" : "Line drawings of the charger stack were created to be used on packaging, manuals, and other marketing collateral.",
+              "text" : "Line drawings of the charging stack were drawn to be used on packaging, manuals, and other marketing collateral.",
               "text_color" : "#212121",
               "bg_color" : "#F9F9F9"
             },
@@ -257,7 +257,7 @@
     "flocabulary" : {
       "title" : "Flocabulary",
       "slug" : "flocabulary",
-      "lede" : "A Brooklyn-based company that creates educational hip hop videos for students in grades K-12.",
+      "lede" : "A Brooklyn-based company that creates educational hip-hop videos for students in grades K-12.",
       "thumbnail" : "/assets/media/img/flocab_thumbnail.jpg",
       "border_color" : "#fc4d25",
       "gradient" : {
@@ -283,7 +283,7 @@
         }, {
           "split" : {
             "left" : {
-              "text" : "As an art department intern, I helped create illustrations and set type for several videos. I worked on the illustrations for this video about coding alonside the art director. ",
+              "text" : "I helped create illustrations and set type for several videos, such as this video about computer programming.",
               "text_color" : "#212121",
               "bg_color" : "#F9F9F9"
             },
@@ -305,7 +305,7 @@
           }, {
           "split" : {
             "left" : {
-              "text" : "A large part of my job was being the sole video editor of The Week In Rap, a current events video produced every Thursday. I also created several Week In Rap Extra videos, which were about larger issues going on in the world today, such as the <a href=\"https://www.flocabulary.com/unit/week-in-rap-extra-refugee-crisis/\" target=\"_blank\">Syrian Refugee Crisis</a>.",
+              "text" : "I was the sole video editor of The Week In Rap, a current events video produced every Thursday. I also created several Week In Rap Extra videos that were about larger issues going on in the world, such as the <a href=\"https://www.flocabulary.com/unit/week-in-rap-extra-refugee-crisis/\" target=\"_blank\">Syrian Refugee Crisis</a>.",
               "text_color" : "#212121",
               "bg_color" : "#F9F9F9"
             },
@@ -319,7 +319,7 @@
               "src" : "/assets/media/img/flocab_wirjr.jpg"
             },
             "right" : {
-              "text" : "Every week I created different infographics and illustrations The Week In Rap Junior, a current events video aimed specifically for grades 3-5. I also created worksheets to go along with video lessons.",
+              "text" : "Every week I created infographics and illustrations for The Week In Rap Junior, current events videos aimed at students in grades 3-5. I also designed worksheets to go along with video lessons.",
               "text_color" : "#212121",
               "bg_color" : "#F9F9F9"
               }

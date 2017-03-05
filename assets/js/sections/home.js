@@ -68,7 +68,8 @@ class Home extends Default {
 			noscrollbar: false,
 			ease: 0.1,
 			vs: {
-				mouseMultiplier: 0.25
+				mouseMultiplier: 0.25,
+				firefoxMultiplier: 30
 			}
 		})
 

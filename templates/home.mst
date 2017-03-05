@@ -17,5 +17,5 @@
       {{/tiles}}
     </ul>
   </div>
-  <button class="back-to-top js-button">Back to to<span>p</span></button>
+  <button class="back-to-top js-button">Back to top</button>
 </div>

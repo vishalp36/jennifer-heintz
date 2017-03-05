@@ -1639,7 +1639,7 @@ dom-create-element@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/dom-create-element/-/dom-create-element-1.0.2.tgz#9ec89ecb501a210487577e1e00cee0d4ec9b5c77"
 
-dom-event@^1.0.0, "dom-event@github:npm-dom/dom-event":
+dom-event@^1.0.0, dom-event@npm-dom/dom-event:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/dom-event/-/dom-event-1.0.0.tgz#690dcc4992d82281c068e2e166e377eeb1e56837"
 
@@ -2905,7 +2905,7 @@ lcid@^1.0.0:
     request "^2.72.0"
     source-map "^0.5.3"
 
-lethargy, lethargy@^1.0.2:
+lethargy@^1.0.2:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/lethargy/-/lethargy-1.0.4.tgz#459dfc5aa49a10ef9056300b90ec03a88e3b98af"
 

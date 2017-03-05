@@ -30,7 +30,7 @@
     "please-ajax": "^2.0.2",
     "prefix": "^1.0.0",
     "query-dom-components": "^0.1.0",
-    "slider-manager": "^1.0.5",
+    "slider-manager": "1.0.5",
     "smooth-scrolling": "^2.3.7",
     "sniffer": "github:watsondg/sniffer"
   },

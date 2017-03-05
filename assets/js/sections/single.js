@@ -48,10 +48,10 @@ class Single extends Default {
 
 		this.slides.forEach(slide => {
 
-			const index = this.slides.indexOf(slide)
-			const height = slide.getBoundingClientRect().height
+			const hero = this.slides.indexOf(slide) === 0
 
-			slide.style.transform = `translateY(${height * index}px)`
+			if (!hero)
+				slide.style.transform = `translateY(${config.height}px)`
 		})
 
 		this.slider = new Manager({
@@ -75,20 +75,16 @@ class Single extends Default {
 
 		const index = evt.current
 		const previous = evt.previous
-		const down = evt.direction === 'downwards'
+
+		const video = {
+			current: this.slides[index].querySelector('video') || null,
+			previous: this.slides[previous].querySelector('video') || null
+		}
 
 		this.slider.animating = true
 
-		const currentVideo = this.slides[index].querySelector('video') || null
-		const previousVideo = this.slides[previous].querySelector('video') || null
-
-		if (currentVideo) {
-			currentVideo.play()
-		}
-
-		if (previousVideo) {
-			previousVideo.pause()
-		}
+		video.current &&	video.current.play()
+		video.previous &&	video.previous.pause()
 
 		const tl = new TimelineMax({ paused: true,
 			onStart: _ => {

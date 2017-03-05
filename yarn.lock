@@ -1651,7 +1651,7 @@ dom-css:
     prefix-style "2.0.1"
     to-camel-case "1.0.0"
 
-dom-event@^1.0.0, dom-event@npm-dom/dom-event:
+dom-event@^1.0.0, "dom-event@github:npm-dom/dom-event":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/dom-event/-/dom-event-1.0.0.tgz#690dcc4992d82281c068e2e166e377eeb1e56837"
 
@@ -4291,7 +4291,7 @@ slash@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-1.0.0.tgz#c41f2f6c39fc16d1cd17ad4b5d896114ae470d55"
 
-slider-manager@^1.0.5:
+slider-manager@1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/slider-manager/-/slider-manager-1.0.5.tgz#ea9a3a9bfbbe7679f3788edc51431435fdcf1bca"
   dependencies:

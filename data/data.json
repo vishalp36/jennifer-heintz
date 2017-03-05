@@ -360,7 +360,8 @@
       { "label" : "Instagram", "link" : "http://instagram.com/jennyheintz" },
       { "label" : "Twitter", "link" : "http://twitter.com/jennyheintz" },
       { "label" : "LinkedIn", "link" : "https://www.linkedin.com/in/jenniferheintz/" },
-      { "label" : "Vimeo", "link" : "https://vimeo.com/jenniferheintz" }
+      { "label" : "Vimeo", "link" : "https://vimeo.com/jenniferheintz" },
+      { "label" : "Resume", "link" : "/assets/media/heintz_resume_february17.pdf" }
     ]
   }
 }

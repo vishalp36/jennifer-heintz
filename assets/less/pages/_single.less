@@ -39,6 +39,10 @@
     width: 100%;
     max-width: 800px;
     font-size: @40px;
+
+    a {
+      .hover-glitch(@pink, @green, .3s)
+    }
   }
 
   &--video {
@@ -68,21 +72,8 @@
 
 .project-nav {
 
-  &__mask {
-    .absolute();
-    overflow: hidden;
-    will-change: transform;
-
-    &--prev {
-      transform: translateX(-50%);
-    }
-
-    &--next {
-      transform: translateX(50%);
-    }
-  }
-
   &__img {
+    .absolute();
     .size(100%, 100%);
     background-repeat: no-repeat;
     background-position: center;
@@ -90,11 +81,11 @@
     will-change: transform;
 
     &--prev {
-      transform: translateX(50%);
+      transform: translateX(-50%);
     }
 
     &--next {
-      transform: translateX(-50%);
+      transform: translateX(50%);
     }
   }
 

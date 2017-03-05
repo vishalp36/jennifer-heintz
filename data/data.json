@@ -15,7 +15,7 @@
           "video" : {
             "src" : "/assets/media/video/nupr_magazine-sequence.mp4",
             "bg_color" : "#2C1EA3",
-            "light_ui" : true,
+            "light" : true,
             "still" : "/assets/media/img/nupr_hero_still.jpg"
           }
         }, {
@@ -47,7 +47,7 @@
         }, {
           "text" : {
             "bg_color" : "#F9F9F9",
-            "text" : "The <a href=\"http://nupoliticalreview.com/\" target=\"_blank\">NUPR website</a>is where student-written blog posts and full length articles are regularly posted and read by the Northeastern community. Using WordPress, we created a site that better reflects the high caliber of writing Northeastern students produce.",
+            "text" : "The <a href=\"http://nupoliticalreview.com/\" target=\"_blank\" data-label=\"NUPR Website\">NUPR website</a> is where student-written blog posts and full length articles are regularly posted and read by the Northeastern community. Using WordPress, we created a site that better reflects the high caliber of writing Northeastern students produce.",
             "align" : "center"
           }
         }, {
@@ -72,7 +72,8 @@
         {
           "video" : {
             "src" : "/assets/media/video/gwtt_logo.mp4",
-            "still" : "/assets/media/img/gwtt_hero_still.jpg"
+            "still" : "/assets/media/img/gwtt_hero_still.jpg",
+            "light" : true
           }
         }, {
           "text" : {
@@ -127,7 +128,8 @@
       "content" : [
         {
           "image" : {
-            "src" : "/assets/media/img/thehook.jpg"
+            "src" : "/assets/media/img/thehook.jpg",
+            "light" : true
           }
         }, {
           "image" : {
@@ -153,7 +155,7 @@
     "chargerx" : {
       "title" : "ChargeRx",
       "slug" : "chargerx",
-      "lede" : "Total brand development for a <a href=\"http://thechargerx.com/\" target=\"_blank\">mobile phone charging service</a> providing compact, stackable chargers to healthcare facilities.",
+      "lede" : "Total brand development for a mobile phone charging service providing compact, stackable chargers to healthcare facilities.",
       "thumbnail" : "/assets/media/img/chargerx_thumbnail.jpg",
       "border_color" : "#006fb9",
       "gradient" : {
@@ -169,7 +171,7 @@
         }, {
           "text" : {
             "bg_color" : "#F9F9F9",
-            "text" : "Total brand development for a mobile phone charging service providing compact, stackable chargers to healthcare facilities.",
+            "text" : "Total brand development for a <a href=\"http://thechargerx.com/\" target=\"_blank\" data-label=\"mobile phone charging service\">mobile phone charging service</a> providing compact, stackable chargers to healthcare facilities.",
             "align" : "center"
           }
         }, {
@@ -265,7 +267,8 @@
       "content" : [
         {
           "image" : {
-            "src" : "/assets/media/img/flocab_hero.jpg"
+            "src" : "/assets/media/img/flocab_hero.jpg",
+            "light" : true
           }
         }, {
           "text" : {

@@ -1,4 +1,11 @@
-<div class="block block--video" style="background-color: {{ bg_color }};" {{#light_ui}}data-light-ui{{/light_ui}}>
+<div class="block block--video" style="background-color: {{ bg_color }};"
+  {{#light}}
+    data-light="true"
+  {{/light}}
+  {{^light}}
+    data-light="false"
+  {{/light}}
+>
   <video class="block--video__video" poster="{{ still }}" preload loop>
     <source src="{{ src }}" type="video/mp4">
   </video>

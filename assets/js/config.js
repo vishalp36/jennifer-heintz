@@ -9,7 +9,9 @@ const config = {
 	nav: domselect.all('.js-nav'),
 
 	width: window.innerWidth,
-	height: window.innerHeight
+	height: window.innerHeight,
+
+	isProjectNavClick: false
 }
 
 export default config

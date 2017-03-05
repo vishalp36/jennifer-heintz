@@ -111,7 +111,7 @@ class Single extends Default {
 
 	onProjectNavClick(evt) {
 
-		this.isProjectNavClick = true
+		config.isProjectNavClick = true
 
 		this.direction = evt.currentTarget.dataset.direction
 	}
@@ -124,6 +124,9 @@ class Single extends Default {
 		const tl = new TimelineMax({ paused: true, onComplete: _ => {
 
 			done()
+
+			config.isProjectNavClick = false
+
 			// remove canvas
 			req.previous && req.previous.route === '/' && canvas.parentNode.removeChild(canvas)
 
@@ -151,13 +154,21 @@ class Single extends Default {
 			})
 			tl.restart()
 
-		} else {
+		} else if (config.isProjectNavClick) {
 
 			// if not, just fade in the page
 			tl.add(_ => {
 				this.setNavColor(0)
 			})
 			tl.set(this.page, { delay: 1, autoAlpha: 1 })
+			tl.restart()
+		} else {
+
+			// if not, just fade in the page
+			tl.add(_ => {
+				this.setNavColor(0)
+			})
+			tl.to(this.page, 1, { autoAlpha: 1 })
 			tl.restart()
 		}
 	}
@@ -174,7 +185,8 @@ class Single extends Default {
 
 		}, onComplete: done })
 
-		if (req.params.id && this.isProjectNavClick) {
+
+		if (req.params.id && config.isProjectNavClick) {
 
 			const img = this.ui[`${this.direction}Project`]
 

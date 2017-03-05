@@ -30,8 +30,6 @@ class Single extends Default {
 
 		this.initSlides()
 
-		this.setProjectNavigation(config.width, config.height)
-
 		this.ui.projectNavLink.forEach(link => {
 			on(link, 'click', this.onProjectNavClick)
 		})
@@ -109,12 +107,6 @@ class Single extends Default {
 		})
 	}
 
-	setProjectNavigation(width, height) {
-
-		this.ui.previousProject.style.clip = `rect(0px ${width / 2}px ${height}px 0px)`
-		this.ui.nextProject.style.clip = `rect(0px ${width}px ${height}px ${width / 2}px)`
-	}
-
 	onProjectNavClick(evt) {
 
 		this.isProjectNavClick = true
@@ -173,14 +165,15 @@ class Single extends Default {
 
 		if (req.params.id && this.isProjectNavClick) {
 
-			const el = this.ui[`${this.direction}Project`]
+			const mask = this.ui[`${this.direction}ProjectMask`]
+			const inner = this.ui[`${this.direction}Project`]
 
-			tl.set(el, {
-				zIndex: 2
+			tl.set(mask, {
+				zIndex: 20
 			})
-			tl.to(el, 1, {
-				clip: `rect(0px ${config.width}px ${config.height}px 0px)`,
-				ease: Expo.easeOut
+			tl.to([mask, inner], 1, {
+				x: 0,
+				ease: Expo.easeInOut
 			})
 			tl.to(this.page, .4, { autoAlpha: 0 })
 			tl.restart()
@@ -190,11 +183,6 @@ class Single extends Default {
 			tl.to(this.page, 1, { autoAlpha: 0, ease: Expo.easeInOut })
 			tl.restart()
 		}
-	}
-
-	resize(width, height) {
-
-		this.setProjectNavigation(width, height)
 	}
 
 	destroy(req, done) {

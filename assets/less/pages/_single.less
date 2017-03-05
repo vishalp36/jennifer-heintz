@@ -68,11 +68,34 @@
 
 .project-nav {
 
-  &__img {
+  &__mask {
     .absolute();
+    overflow: hidden;
+    will-change: transform;
+
+    &--prev {
+      transform: translateX(-50%);
+    }
+
+    &--next {
+      transform: translateX(50%);
+    }
+  }
+
+  &__img {
+    .size(100%, 100%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    will-change: transform;
+
+    &--prev {
+      transform: translateX(50%);
+    }
+
+    &--next {
+      transform: translateX(-50%);
+    }
   }
 
   &__label {

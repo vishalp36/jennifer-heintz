@@ -20,8 +20,12 @@
   <!-- todo: add {{#light_ui}}data-light-ui{{/light_ui}} -->
   <article class="slide js-slides">
 
-    <div class="project-nav__img js-previous-project" style="background-image: url('{{ prev.hero }}')"></div>
-    <div class="project-nav__img js-next-project" style="background-image: url('{{ next.hero }}')"></div>
+    <div class="project-nav__mask project-nav__mask--prev js-previous-project-mask">
+      <div class="project-nav__img project-nav__img--prev js-previous-project" style="background-image: url('{{ prev.hero }}')"></div>
+    </div>
+    <div class="project-nav__mask project-nav__mask--next js-next-project-mask">
+      <div class="project-nav__img project-nav__img--next js-next-project" style="background-image: url('{{ next.hero }}')"></div>
+    </div>
 
     <div class="block block--split">
 

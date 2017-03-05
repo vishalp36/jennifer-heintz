@@ -211,3 +211,19 @@ Contact
 Medias Queries
 ----- */
 @import "import/_medias.less";
+
+.wagz {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: rotate(90deg) translateY(-250%);
+
+	a {
+		transition: opacity .8s;
+
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}

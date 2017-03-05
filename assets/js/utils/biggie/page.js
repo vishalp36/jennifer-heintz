@@ -78,10 +78,10 @@ export default (req, view, options, done) => {
 
   } else {
 
-    setTimeout(() => {
+    requestAnimationFrame(_ => {
       page.innerHTML = cache[id]
       done()
-    }, 1)
+    })
   }
 
   return page

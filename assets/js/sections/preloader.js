@@ -94,9 +94,9 @@ class Preloader {
 
 		const tl = new TimelineMax({ paused: true, onComplete: done })
 
-		tl.staggerTo(text.children, 1, { autoAlpha: 0 }, 0.05, 'out')
-		tl.set(this.el, { autoAlpha: 0 })
+		tl.staggerTo(text.children, 1, { autoAlpha: 0 }, -0.05, 'out')
 		tl.to(ui, 1.5, { autoAlpha: 1 }, 'out')
+		tl.set(this.el, { autoAlpha: 0 })
 		tl.restart()
 	}
 

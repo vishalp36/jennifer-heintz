@@ -45,11 +45,19 @@ Preloader
     &--horizontal {
       .size(100%, @30px);
       transform: scaleX(0);
+
+      @media (max-width: 700px) {
+        height: @20px;
+      }
     }
 
     &--vertical {
       .size(@30px, 100%);
       transform: scaleY(0);
+
+      @media (max-width: 700px) {
+        width: @20px;
+      }
     }
 
     &--top {

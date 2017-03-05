@@ -118,6 +118,11 @@ App UI
 					width: @80px;
 				}
 			}
+
+			@media (max-width: 700px) {
+				top: @20px;
+				left: @20px;
+			}
 		}
 
 		&--work {
@@ -127,16 +132,29 @@ App UI
 			@media (max-width: 1240px) {
 				top: @20px;
 			}
+
+			@media (max-width: 700px) {
+				top: @15px;
+				right: @20px;
+			}
 		}
 
 		&--about {
 			bottom: @12px;
 			left: @30px;
+
+			@media (max-width: 700px) {
+				left: @20px;
+			}
 		}
 
 		&--contact {
 			bottom: @12px;
 			right: @30px;
+
+			@media (max-width: 700px) {
+				right: @20px;
+			}
 		}
 	}
 }
@@ -157,6 +175,10 @@ Global border and mobile portrait overlay styles
 	pointer-events: none;
 	z-index: 8888;
 	transition: border-color 1s, background-color .25s;
+
+	@media (max-width: 700px) {
+		border-width: @20px;
+	}
 
 	h2, svg {
 		opacity: 0;

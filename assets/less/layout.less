@@ -33,6 +33,7 @@ body {
 	background-color: #f9f9f9;
 
 	&.is-home {
+		main { overflow: auto; }
 		.nav__link--work { .active(); }
 	}
 
@@ -46,50 +47,38 @@ body {
 }
 
 /* -----
-Global Border and mobile portrait overlay styles
+Typography
 ----- */
-.border {
+@import "import/_typography.less";
+
+
+/* -----
+View
+----- */
+main {
 	.fixed();
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border-width: @30px;
-	border-style: solid;
-	border-color: @black;
-	opacity: 0;
-	pointer-events: none;
-	z-index: 8888;
-	transition: border-color 1s, background-color .25s;
+	.size(100%,100%);
 
-	h2, svg {
-		opacity: 0;
-		transition: opacity .25s;
-	}
-
-	h2 {
-		font-family: @nav-font;
-		font-size: @40px;
-		line-height: 1.2;
-		padding: 0 6rem;
-		margin-bottom: 2rem;
-	}
-
-	@media (orientation: portrait) {
-		pointer-events: auto;
-		border-color: @blue;
-		background-color: @white;
-
-		h2, svg {
-			opacity: 1;
-		}
+	.page {
+		.fixed();
+		.hidden();
+		text-align: center;
 	}
 }
 
 /* -----
-Typography
+Utils
 ----- */
-@import "import/_typography.less";
+.vertical-align {
+	display: table;
+	position: relative;
+	.size(100%,100%);
+
+	&__item {
+		display: table-cell;
+		vertical-align: middle
+	}
+}
 
 /* -----
 App UI
@@ -153,30 +142,43 @@ App UI
 }
 
 /* -----
-View
+Global border and mobile portrait overlay styles
 ----- */
-main {
+.border {
 	.fixed();
-	.size(100%,100%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-width: @30px;
+	border-style: solid;
+	border-color: @black;
+	opacity: 0;
+	pointer-events: none;
+	z-index: 8888;
+	transition: border-color 1s, background-color .25s;
 
-	.page {
-		.fixed();
-		.hidden();
-		text-align: center;
+	h2, svg {
+		opacity: 0;
+		transition: opacity .25s;
 	}
-}
 
-/* -----
-Utils
------ */
-.vertical-align {
-	display: table;
-	position: relative;
-	.size(100%,100%);
+	h2 {
+		font-family: @nav-font;
+		font-size: @40px;
+		line-height: 1.2;
+		padding: 0 6rem;
+		margin-bottom: 2rem;
+	}
 
-	&__item {
-		display: table-cell;
-		vertical-align: middle
+	@media (orientation: portrait) {
+		pointer-events: auto;
+		border-color: @blue;
+		background-color: @white;
+
+		h2, svg {
+			opacity: 1;
+		}
 	}
 }
 
@@ -189,11 +191,6 @@ Preloader
 Home
 ----- */
 @import "pages/_home.less";
-
-/* -----
-Work
------ */
-@import "pages/_work.less";
 
 /* -----
 Single

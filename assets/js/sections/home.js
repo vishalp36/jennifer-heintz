@@ -2,7 +2,7 @@ import config from 'config'
 import utils from 'utils'
 import classes from 'dom-classes'
 import Default from './default'
-import Custom from '../lib/custom-smooth'
+import Custom from '../lib/custom'
 import { on, off } from 'dom-event'
 
 class Home extends Default {

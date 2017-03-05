@@ -2,12 +2,12 @@
   <div class="smooth js-smooth">
     <ul class="project-tiles js-tiles">
       {{#tiles}}
-        <li class="project-tile js-tile" data-bg-from="{{ project.gradient.from }}" data-bg-to="{{ project.gradient.to }}">
+        <li class="project-tile js-tile" data-bg-from="{{ project.gradient.from }}" data-bg-to="{{ project.gradient.to }}" data-speed="{{project.speed}}">
           <a class="project-tile__content" href="/work/{{ project.slug }}">
             <div class="project-tile__media js-mask">
               <div class="project-tile__img js-lazy" data-src="{{ project.thumbnail }}"></div>
               <div class="project-tile__gradient js-gradient" style="background-image: linear-gradient(135deg, {{ project.gradient.from }} 0%, {{ project.gradient.to }} 100%)"></div>
-            </div>  
+            </div>
             <div class="project-tile__body">
               <h2 class="project-tile__title">{{ project.title }}</h2>
               <p class="project-tile__lede">{{ project.lede }}</p>
@@ -17,5 +17,5 @@
       {{/tiles}}
     </ul>
   </div>
-  <button class="back-to-top js-button">Back to to<span>p</span></button>
+  <button class="back-to-top js-button" style="display: none;">Back to to<span>p</span></button>
 </div>

@@ -47,7 +47,7 @@
         }, {
           "text" : {
             "bg_color" : "#F9F9F9",
-            "text" : "The <a href=\"http://nupoliticalreview.com/\" target=\"_blank\" data-label=\"NUPR website\">NUPR website</a> is where blog posts and full-length articles are regularly posted and read by the Northeastern community. Using WordPress, we created a site that reflects the high calliber writing of Northeastern students.",
+            "text" : "The <a href=\"http://nupoliticalreview.com/\" target=\"_blank\" data-label=\"NUPR website\">NUPR website</a> is where blog posts and full-length articles are regularly posted and read by the Northeastern community. Using WordPress, we created a site that reflects the high caliber writing of Northeastern students.",
             "align" : "center"
           }
         }, {
@@ -145,13 +145,13 @@
             "src" : "/assets/media/img/dfw_illustration.jpg"
           }
         }, {
-        "image" : {
-          "src" : "/assets/media/img/3trips_poster.jpg",
-          "bg_color" : "#F9F9F9"
+          "image" : {
+            "src" : "/assets/media/img/3trips_poster.jpg",
+            "bg_color" : "#F9F9F9"
+          }
         }
-      }
-    ]
-  },
+      ]
+    },
     "chargerx" : {
       "title" : "ChargeRx",
       "slug" : "chargerx",
@@ -203,9 +203,9 @@
               "text" : "The labels on the device were designed to be simple and understandable to any patient.",
               "text_color" : "#212121",
               "bg_color" : "#F9F9F9"
-              }
             }
-          }, {
+          }
+        }, {
           "image" : {
             "src" : "/assets/media/img/chargerx_instructions.png"
           }

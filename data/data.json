@@ -212,7 +212,7 @@
         }, {
           "split" : {
             "left" : {
-              "text" : "All designs and photography were done in collaboration with Isabel Mendez, Christina Allan, and Josh Svoboda through <a href=\"http://www.northeastern.edu/scout/Scout\" target=\"_blank\">Scout</a>, a student-led design studio at Northeastern University.",
+              "text" : "All designs and photography were done in collaboration with Isabel Mendez, Christina Allan, and Josh Svoboda through <a href=\"http://www.northeastern.edu/scout\" target=\"_blank\">Scout</a>, a student-led design studio at Northeastern University.",
               "text_color" : "#212121",
               "bg_color" : "#F9F9F9"
             },

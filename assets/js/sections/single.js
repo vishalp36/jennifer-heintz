@@ -33,13 +33,12 @@ class Single extends Default {
 
 		super.ready()
 
-		this.slides = Array.from(this.ui.slides)
+		this.slides = [...this.ui.slides]
+		this.blocks = [...this.ui.blocks]
 
 		this.initSlides()
 
-		this.ui.projectNavLink.forEach(link => {
-			on(link, 'click', this.onProjectNavClick)
-		})
+		this.ui.projectNavLink.forEach(link => on(link, 'click', this.onProjectNavClick))
 
 		done()
 	}
@@ -64,7 +63,7 @@ class Single extends Default {
 
 	setNavColor(index) {
 
-		const color = this.slides[index].querySelector('.block').dataset.light === 'true' ? '#F9F9F9' : '#2B2B2B'
+		const color = this.blocks[index].dataset.light === 'true' ? '#F9F9F9' : '#2B2B2B'
 
 		config.nav.forEach(el => {
 			el.style.color = color
@@ -136,11 +135,7 @@ class Single extends Default {
 			// and then fade out canvas
 		if (req.previous && req.previous.route === '/') {
 
-			tl.to(this.page, 0, {
-				autoAlpha: 1,
-				ease: Expo.easeInOut,
-				delay: 1.6
-			})
+			tl.set(this.page, { autoAlpha: 1, delay: 1.6 })
 			tl.add(_ => {
 				this.setNavColor(0)
 			})

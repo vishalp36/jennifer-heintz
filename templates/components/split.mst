@@ -1,4 +1,4 @@
-<div class="block block--split"
+<div class="block block--split js-blocks"
   {{#light}}
     data-light="true"
   {{/light}}

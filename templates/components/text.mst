@@ -1,4 +1,4 @@
-<div class="block block--text" style="background-color: {{ bg_color }}; text-align: {{ align }};"
+<div class="block block--text js-blocks" style="background-color: {{ bg_color }}; text-align: {{ align }};"
   {{#light}}
     data-light="true"
   {{/light}}

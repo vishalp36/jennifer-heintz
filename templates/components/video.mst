@@ -1,4 +1,4 @@
-<div class="block block--video" style="background-color: {{ bg_color }};"
+<div class="block block--video js-blocks" style="background-color: {{ bg_color }};"
   {{#light}}
     data-light="true"
   {{/light}}
@@ -9,4 +9,5 @@
   <video class="block--video__video" poster="{{ still }}" preload loop>
     <source src="{{ src }}" type="video/mp4">
   </video>
+  <div class="block--video__mobile-still" style="background-image: url('{{ still }}')'"></div>
 </div>

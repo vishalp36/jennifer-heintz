@@ -115,6 +115,7 @@ class Single extends Default {
 		classes.add(config.body, `is-${this.slug}`)
 
 		this.blocks = window._data.projects[req.params.id].content.map(obj => obj[Object.keys(obj)[0]]);
+		this.blocks[this.blocks.length] = { light: false }
 
 		const canvas = document.querySelector('canvas')
 		const tl = new TimelineMax({ paused: true, onComplete: _ => {

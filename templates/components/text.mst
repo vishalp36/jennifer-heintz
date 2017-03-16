@@ -1,11 +1,4 @@
-<div class="block block--text js-blocks" style="background-color: {{ bg_color }}; text-align: {{ align }};"
-  {{#light}}
-    data-light="true"
-  {{/light}}
-  {{^light}}
-    data-light="false"
-  {{/light}}
->
+<div class="block block--text js-blocks" style="background-color: {{ bg_color }}; text-align: {{ align }};">
   <div class="vertical-align">
     <div class="vertical-align__item">
       <h1 class="block__text">

@@ -1,11 +1,4 @@
-<div class="block block--split js-blocks"
-  {{#light}}
-    data-light="true"
-  {{/light}}
-  {{^light}}
-    data-light="false"
-  {{/light}}
->
+<div class="block block--split js-blocks">
   <div class="block--split__column">
     {{#left}}
       {{#src}}

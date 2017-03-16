@@ -1,8 +1,1 @@
-<div class="block block--image js-blocks" style="background-image: url('{{ src }}')"
-  {{#light}}
-    data-light="true"
-  {{/light}}
-  {{^light}}
-    data-light="false"
-  {{/light}}
-></div>
+<div class="block block--image" style="background-image: url('{{ src }}')"></div>

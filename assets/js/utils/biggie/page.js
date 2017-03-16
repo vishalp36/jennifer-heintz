@@ -58,6 +58,10 @@ export default (req, view, options, done) => {
 
     if (req.params.id) {
 
+      delete data.tiles
+
+      console.log(data)
+
       blockTypes.forEach(type => {
         ajax.get(`${config.BASE}templates/components/${type}.mst`, {
           success: (object) => {

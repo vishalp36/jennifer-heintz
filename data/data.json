@@ -107,7 +107,7 @@
               "src" : "/assets/media/img/gwtt_web.jpg"
             },
             "right" : {
-              "text" : "People can sign a petition for paid leave at <a href=\"http://getwiththetimes.us/\" target=\"_blank\">getwiththetimes.us</a>, a custom site I designed in collaboration with developer, Mike Wagz.",
+              "text" : "People can sign a petition for paid leave at <a href=\"http://www.getwiththetimes.us/\" target=\"_blank\">getwiththetimes.us</a>, a custom site I designed in collaboration with developers, Mike Wagz and Gen Ohta.",
               "text_color" : "#212121",
               "bg_color" : "#F9F9F9"
             }

@@ -34,7 +34,6 @@ class Single extends Default {
 		super.ready()
 
 		this.slides = [...this.ui.slides]
-		this.blocks = [...this.ui.blocks]
 
 		this.initSlides()
 
@@ -63,7 +62,7 @@ class Single extends Default {
 
 	setNavColor(index) {
 
-		const color = this.blocks[index].dataset.light === 'true' ? '#F9F9F9' : '#2B2B2B'
+		const color = this.blocks[index].light === true ? '#F9F9F9' : '#2B2B2B'
 
 		config.nav.forEach(el => {
 			el.style.color = color
@@ -114,6 +113,8 @@ class Single extends Default {
 	animateIn(req, done) {
 
 		classes.add(config.body, `is-${this.slug}`)
+
+		this.blocks = window._data.projects[req.params.id].content.map(obj => obj[Object.keys(obj)[0]]);
 
 		const canvas = document.querySelector('canvas')
 		const tl = new TimelineMax({ paused: true, onComplete: _ => {

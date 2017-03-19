@@ -47,7 +47,7 @@
         }, {
           "text" : {
             "bg_color" : "#F9F9F9",
-            "text" : "The <a href=\"http://nupoliticalreview.com/\" target=\"_blank\" data-label=\"NUPR website\">NUPR website</a> is where blog posts and full-length articles are regularly posted and read by the Northeastern community. Using WordPress, we created a site that reflects the high caliber writing of Northeastern students.",
+            "text" : "The <a href=\"http://nupoliticalreview.com/\" style=\"color: #FE4B3D\" target=\"_blank\">NUPR website</a> is where blog posts and full-length articles are regularly posted and read by the Northeastern community. Using WordPress, we created a site that reflects the high caliber writing of Northeastern students.",
             "align" : "center"
           }
         }, {
@@ -107,7 +107,7 @@
               "src" : "/assets/media/img/gwtt_web.jpg"
             },
             "right" : {
-              "text" : "People can sign a petition for paid leave at <a href=\"http://www.getwiththetimes.us/\" target=\"_blank\">getwiththetimes.us</a>, a custom site I designed in collaboration with developers, Mike Wagz and Gen Ohta.",
+              "text" : "People can sign a petition for paid leave at <a href=\"http://www.getwiththetimes.us/\" style=\"color: #2D2771\" target=\"_blank\">getwiththetimes.us</a>, a custom site I designed in collaboration with developers, Mike Wagz and Gen Ohta.",
               "text_color" : "#212121",
               "bg_color" : "#F9F9F9"
             }
@@ -171,7 +171,7 @@
         }, {
           "text" : {
             "bg_color" : "#F9F9F9",
-            "text" : "Total brand development for a <a href=\"http://thechargerx.com/\" target=\"_blank\" data-label=\"mobile phone charging service\">mobile phone charging service</a> providing compact, stackable chargers to healthcare facilities.",
+            "text" : "Total brand development for a <a href=\"http://thechargerx.com/\" style=\"color: #006fb9\" target=\"_blank\">mobile phone charging service</a> providing compact, stackable chargers to healthcare facilities.",
             "align" : "center"
           }
         }, {
@@ -212,7 +212,7 @@
         }, {
           "split" : {
             "left" : {
-              "text" : "All designs and photography were done in collaboration with Isabel Mendez, Christina Allan, and Josh Svoboda through <a href=\"http://www.northeastern.edu/scout\" target=\"_blank\">Scout</a>, a student-led design studio at Northeastern University.",
+              "text" : "All designs and photography were done in collaboration with Isabel Mendez, Christina Allan, and Josh Svoboda through <a href=\"http://www.northeastern.edu/scout\" style=\"color: #006fb9\" target=\"_blank\">Scout</a>, a student-led design studio at Northeastern University.",
               "text_color" : "#212121",
               "bg_color" : "#F9F9F9"
             },
@@ -305,7 +305,7 @@
           }, {
           "split" : {
             "left" : {
-              "text" : "I was the sole video editor of The Week In Rap, a current events video produced every Thursday. I also created several Week In Rap Extra videos that were about larger issues going on in the world, such as the <a href=\"https://www.flocabulary.com/unit/week-in-rap-extra-refugee-crisis/\" target=\"_blank\">Syrian Refugee Crisis</a>.",
+              "text" : "I was the sole video editor of The Week In Rap, a current events video produced every Thursday. I also created several Week In Rap Extra videos that were about larger issues going on in the world, such as the <a href=\"https://www.flocabulary.com/unit/week-in-rap-extra-refugee-crisis/\" style=\"color: #fc4d25\" target=\"_blank\">Syrian Refugee Crisis</a>.",
               "text_color" : "#212121",
               "bg_color" : "#F9F9F9"
             },

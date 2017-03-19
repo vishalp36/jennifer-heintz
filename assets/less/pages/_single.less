@@ -63,7 +63,12 @@
     }
 
     a {
-      .hover-glitch(@pink, @green, .3s)
+      text-decoration: none;
+      transition: opacity 0.5s @easeOutQuint;
+
+      &:hover {
+        opacity: 0.6;
+      }
     }
   }
 

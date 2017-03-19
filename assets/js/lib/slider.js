@@ -63,7 +63,13 @@ export default class Slider {
 
   getNext(delta) {
 
-    const next = delta >= this.options.delta ? this.index - 1 : this.index + 1
+    let next
+
+    if (sniffer.isDevice) {
+      next = delta >= this.options.delta ? this.index + 1 : this.index - 1
+    } else {
+      next = delta >= this.options.delta ? this.index - 1 : this.index + 1
+    }
 
     return this.checkLoop(next)
   }

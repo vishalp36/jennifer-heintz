@@ -3,7 +3,7 @@ import utils from 'utils'
 import classes from 'dom-classes'
 import { on, off } from 'dom-event'
 import Default from './default'
-import Manager from 'slider-manager'
+import Slider from '../lib/slider'
 
 class Single extends Default {
 
@@ -52,7 +52,7 @@ class Single extends Default {
 				slide.style.transform = `translateY(${config.height}px)`
 		})
 
-		this.slider = new Manager({
+		this.slider = new Slider({
 		  length: this.slides.length - 1,
 		  callback: this.onSlide
 		})

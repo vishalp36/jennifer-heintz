@@ -89,9 +89,7 @@ class Single extends Default {
 				this.setNavColor(index)
 			},
 			onComplete: _ => {
-				setTimeout(_ => {
-					this.slider.animating = false
-				}, 200)
+				this.slider.animating = false
 			}
 		})
 

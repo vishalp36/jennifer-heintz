@@ -1,5 +1,5 @@
+import 'whatwg-fetch'
 import config from 'config'
-import ajax from 'please-ajax'
 import sniffer from 'sniffer'
 import classes from 'dom-classes'
 import create from 'dom-create-element'
@@ -20,12 +20,12 @@ class Preloader {
 
 		classes.add(config.body, 'is-loading')
 
-		ajax.get(`${config.BASE}data/data.json`, {
-	 		success: (object) => {
-				window._data = object.data
+		fetch(`${config.BASE}data/data.json`)
+			.then(res => res.json())
+			.then(json => {
+				window._data = json
 				done()
-	 		}
- 		})
+			})
 
 		config.infos = sniffer.getInfos()
 

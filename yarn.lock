@@ -1651,7 +1651,7 @@ dom-css:
     prefix-style "2.0.1"
     to-camel-case "1.0.0"
 
-dom-event@^1.0.0, "dom-event@github:npm-dom/dom-event":
+dom-event@^1.0.0, dom-event@npm-dom/dom-event:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/dom-event/-/dom-event-1.0.0.tgz#690dcc4992d82281c068e2e166e377eeb1e56837"
 
@@ -3733,10 +3733,6 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
-please-ajax@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/please-ajax/-/please-ajax-2.0.2.tgz#b55da6dff2c1b4ccdfc486a72cc473d24487dcd3"
-
 portscanner@2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/portscanner/-/portscanner-2.1.1.tgz#eabb409e4de24950f5a2a516d35ae769343fbb96"
@@ -4915,6 +4911,10 @@ weinre@^2.0.0-pre-I0Z7U9OV:
     express "2.5.x"
     nopt "3.0.x"
     underscore "1.7.x"
+
+whatwg-fetch:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz#9c84ec2dcf68187ff00bc64e1274b442176e1c84"
 
 when@^3.7.7:
   version "3.7.7"

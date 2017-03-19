@@ -3733,10 +3733,6 @@ pinkie@^2.0.0:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
 
-please-ajax:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/please-ajax/-/please-ajax-2.0.2.tgz#b55da6dff2c1b4ccdfc486a72cc473d24487dcd3"
-
 portscanner@2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/portscanner/-/portscanner-2.1.1.tgz#eabb409e4de24950f5a2a516d35ae769343fbb96"

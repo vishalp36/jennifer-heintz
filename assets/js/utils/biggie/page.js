@@ -1,6 +1,6 @@
+import 'whatwg-fetch'
 import config from 'config'
 import cache from 'cache'
-import ajax from 'please-ajax'
 import create from 'dom-create-element'
 import slug from './slug'
 import once from '@utils/func'

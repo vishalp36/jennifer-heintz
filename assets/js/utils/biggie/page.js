@@ -1,6 +1,6 @@
+import 'whatwg-fetch'
 import config from 'config'
 import cache from 'cache'
-import ajax from 'please-ajax'
 import create from 'dom-create-element'
 import slug from './slug'
 import once from '@utils/func'
@@ -60,11 +60,10 @@ export default (req, view, options, done) => {
 
       delete data.tiles
 
-      console.log(data)
-
       blockTypes.forEach(type => {
         ajax.get(`${config.BASE}templates/components/${type}.mst`, {
           success: (object) => {
+            console.log(`${type} partial loaded`)
             partials[`${type}_block`] = object.data
           }
         })
@@ -73,6 +72,7 @@ export default (req, view, options, done) => {
 
     ajax.get(`${config.BASE}templates/${href}.mst`, {
       success: (object) => {
+        console.log(`page template loaded`)
         const rendered = Mustache.render(object.data, data, partials)
         page.innerHTML = rendered
         if (options.cache) cache[id] = rendered

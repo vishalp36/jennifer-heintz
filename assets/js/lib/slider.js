@@ -33,32 +33,32 @@ export default class Slider {
 
   init() {
 
-      if(sniffer.isDevice) {
-        this.hammer = new Hammer.Manager(this.el)
-        this.hammer.add(new Hammer.Swipe())
-        this.hammer.on('swipe', this.onSwipe)
-      }
+    if(sniffer.isDevice) {
+      this.hammer = new Hammer.Manager(this.el)
+      this.hammer.add(new Hammer.Swipe())
+      this.hammer.on('swipe', this.onSwipe)
+    }
 
-      if(sniffer.isDesktop) {
-        this.vs = new vs({limitInertia: true})
-        this.vs.on(this.onScroll)
-        on(document, 'keydown', this.onKeyDown)
-      }
+    if(sniffer.isDesktop) {
+      this.vs = new vs({limitInertia: true})
+      this.vs.on(this.onScroll)
+      on(document, 'keydown', this.onKeyDown)
+    }
   }
 
   destroy() {
 
-      if(sniffer.isDevice) {
-        this.hammer.off('swipe', this.onSwipe)
-        this.hammer.destroy()
-        this.hammer = null
-      }
+    if(sniffer.isDevice) {
+      this.hammer.off('swipe', this.onSwipe)
+      this.hammer.destroy()
+      this.hammer = null
+    }
 
-      if(sniffer.isDesktop) {
-        this.vs.destroy()
-        this.vs = null
-        off(document, 'keydown', this.onKeyDown)
-      }
+    if(sniffer.isDesktop) {
+      this.vs.destroy()
+      this.vs = null
+      off(document, 'keydown', this.onKeyDown)
+    }
   }
 
   getNext(delta) {

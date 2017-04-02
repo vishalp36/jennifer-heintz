@@ -122,9 +122,6 @@ class Single extends Default {
 
 			config.isProjectNavClick = false
 
-			// remove canvas
-			req.previous && req.previous.route === '/' && canvas.parentNode.removeChild(canvas)
-
 			// if hero is a video, play it
 			const video = this.slides[0].querySelector('video') || null
 			video && video.play()
@@ -135,12 +132,14 @@ class Single extends Default {
 			// and then fade out canvas
 		if (req.previous && req.previous.route === '/') {
 
-			tl.set(this.page, { autoAlpha: 1, delay: 1.6 })
 			tl.add(_ => {
 				this.setNavColor(0)
 			})
-			tl.to(canvas, .6, {
-				autoAlpha: 0,
+			tl.fromTo(this.page, 1, {
+				y: '100%', 
+				autoAlpha: 1 
+			}, {
+				y: 0,
 				ease: Expo.easeInOut
 			})
 			tl.restart()
@@ -156,6 +155,7 @@ class Single extends Default {
 		} else {
 
 			// if not, just fade in the page
+			// tl.set(this.page, { y: 0, autoAlpha: 1 })
 			tl.add(_ => {
 				this.setNavColor(0)
 			})

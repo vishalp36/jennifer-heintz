@@ -45,7 +45,7 @@ class About extends Default {
 	onMouseMove(evt) {
 
 		this.page.x = (evt.pageX - config.width / 2) / config.width * 12
-  	this.page.y = (evt.pageY - config.height / 2) / config.height * 12
+  		this.page.y = (evt.pageY - config.height / 2) / config.height * 12
 
 		this.ease.x += (this.page.x - this.ease.x) * .1
 		this.ease.y += (this.page.y - this.ease.y) * .1

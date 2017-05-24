@@ -1,5 +1,4 @@
 import config from 'config'
-import utils from 'utils'
 import classes from 'dom-classes'
 import { on, off } from 'dom-event'
 import Default from './default'

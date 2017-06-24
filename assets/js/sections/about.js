@@ -12,10 +12,12 @@ class About extends Default {
 
 		this.slug = 'about'
 
+		this.mouse = { x: 0, y: 0 }
 		this.page = { x: 0, y: 0 }
 		this.ease = { x: 0, y: 0 }
 
 		this.onMouseMove = this.onMouseMove.bind(this)
+		this.run = this.run.bind(this)
 	}
 
 	init(req, done) {
@@ -28,6 +30,7 @@ class About extends Default {
 		super.ready()
 
 		this.addEvents()
+		this.run()
 
 		done()
 	}
@@ -39,20 +42,24 @@ class About extends Default {
 
 	removeEvents() {
 
-		!config.infos.isDevice &&  off(config.body, 'mousemove', this.onMouseMove)
+		!config.infos.isDevice && off(config.body, 'mousemove', this.onMouseMove)
 	}
 
-	onMouseMove(evt) {
+	onMouseMove({ pageX: x, pageY: y }) {
+		this.mouse.x = x
+		this.mouse.y = y
+	}
 
-		this.page.x = (evt.pageX - config.width / 2) / config.width * 12
-  	this.page.y = (evt.pageY - config.height / 2) / config.height * 12
+	run() {
+		requestAnimationFrame(this.run)
 
-		this.ease.x += (this.page.x - this.ease.x) * .1
-		this.ease.y += (this.page.y - this.ease.y) * .1
+		this.page.x = (this.mouse.x - config.width / 2) / config.width * 12
+  	this.page.y = (this.mouse.y - config.height / 2) / config.height * 12
 
-		requestAnimationFrame(_ => {
-			this.ui.bio.style.transform = `rotateX(${-this.ease.y}deg) rotateY(${this.ease.x}deg)`
-		})
+		this.ease.x += (this.page.x - this.ease.x) * 0.1
+		this.ease.y += (this.page.y - this.ease.y) * 0.1
+
+		this.ui.bio.style.transform = `rotateX(${-this.ease.y.toFixed(2)}deg) rotateY(${this.ease.x.toFixed(2)}deg)`
 	}
 
 	animateIn(req, done) {

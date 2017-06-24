@@ -29,9 +29,29 @@ class Preloader {
 
 		config.infos = sniffer.getInfos()
 
+		this.credit()
 		this.createDOM()
 
 		done()
+	}
+
+	credit() {
+
+		if (config.infos.isChrome) {
+				const args = [
+					'\n\n %c %c %c code by mike wagz - http://wagz.io/ - %c🤘 %c %c \n\n',
+					'background: rgb(255, 199, 199); padding:5px 0; font-size: 11px;',
+					'background: rgb(255, 199, 199); padding:5px 0; font-size: 11px;',
+					'color: #2b2b2b; background: #f9f9f9; padding:5px 0; font-size: 11px;',
+					'color: #008D51; background: #f9f9f9; padding:5px 0; font-size: 11px;',
+					'background: rgb(255, 199, 199); padding:5px 0; font-size: 11px;',
+					'background: rgb(255, 199, 199); padding:5px 0; font-size: 11px;'
+				]
+
+				console.log.apply(console, args)
+		} else if (console) {
+				console.log('code by mike wagz - http://www.wagz.io/ - 🤘')
+		}
 	}
 
 	createDOM() {
@@ -69,7 +89,7 @@ class Preloader {
 			done()
 			this.preloaded()
 		}})
-		
+
 		tl.to(text, 1.75, { autoAlpha: 1, ease: Linear.easeNone })
 		tl.restart()
 	}

@@ -8,8 +8,6 @@ class App {
 
   constructor(opt = {}) {
 
-    console.log(`%ccode by mike wagz`, 'color: #666')
-
     this.ui = {
       pupil: document.querySelector('#pupil'),
       ball: document.querySelector('#ball'),

@@ -6,6 +6,7 @@
       "lede" : "A new brand and creative direction for Northeastern University’s student-led political magazine.",
       "thumbnail" : "/assets/media/img/nupr_thumbnail.jpg",
       "border_color" : "#FE4B3D",
+      "ease" : "0.11",
       "gradient" : {
         "from" : "#2825A7",
         "to" : "#8481FF"
@@ -64,6 +65,7 @@
       "lede" : "A public action campaign exposing the United States’ lack of paid family leave.",
       "thumbnail" : "/assets/media/img/gwtt_thumbnail.jpg",
       "border_color" : "#2D2771",
+      "ease" : "0.12",
       "gradient" : {
         "from" : "#2D2771",
         "to" : "#CF6FAC"
@@ -121,6 +123,7 @@
       "lede" : "Various artworks from here and there.",
       "thumbnail" : "/assets/media/img/illust_thumbnail.jpg",
       "border_color" : "#FFC7C7",
+      "ease" : "0.1",
       "gradient" : {
         "from" : "#6CC497",
         "to" : "#9FC9EB"
@@ -158,6 +161,7 @@
       "lede" : "Total brand development for a mobile phone charging service providing compact, stackable chargers to healthcare facilities.",
       "thumbnail" : "/assets/media/img/chargerx_thumbnail.jpg",
       "border_color" : "#006fb9",
+      "ease" : "0.099",
       "gradient" : {
         "from" : "#006fb9",
         "to" : "#d1d1d1"
@@ -229,6 +233,7 @@
       "lede" : "Album artwork for the artist Lauv.",
       "thumbnail" : "/assets/media/img/lauv_thumbnail.jpg",
       "border_color" : "#8484C2",
+      "ease" : "0.099",
       "gradient" : {
         "from" : "#8484C2",
         "to" : "#ECD7C6"
@@ -260,6 +265,7 @@
       "lede" : "A Brooklyn-based company that creates educational hip-hop videos for students in grades K-12.",
       "thumbnail" : "/assets/media/img/flocab_thumbnail.jpg",
       "border_color" : "#fc4d25",
+      "ease" : "0.11",
       "gradient" : {
         "from" : "#f76c19",
         "to" : "#ead061"

@@ -2,7 +2,7 @@
   <div class="smooth js-smooth">
     <ul class="project-tiles js-tiles">
       {{#tiles}}
-        <li class="project-tile js-tile" data-bg-from="{{ tile.gradient.from }}" data-bg-to="{{ tile.gradient.to }}">
+        <li class="project-tile js-tile" data-bg-from="{{ tile.gradient.from }}" data-bg-to="{{ tile.gradient.to }}" data-ease="{{ tile.ease }}">
           <a class="project-tile__content" href="/work/{{ tile.slug }}">
             <div class="project-tile__media js-mask">
               <div class="project-tile__img js-lazy" data-src="{{ tile.thumbnail }}"></div>

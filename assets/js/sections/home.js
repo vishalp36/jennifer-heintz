@@ -65,7 +65,8 @@ class Home extends Default {
 		this.smooth = new Custom({
 			section: this.ui.smooth,
 			opacity: this.ui.button,
-			noscrollbar: false,
+			parallax: this.ui.tile,
+			noscrollbar: true,
 			ease: 0.1,
 			vs: {
 				mouseMultiplier: 0.25,

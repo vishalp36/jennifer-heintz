@@ -65,7 +65,7 @@
       "lede" : "A public action campaign exposing the United States’ lack of paid family leave.",
       "thumbnail" : "/assets/media/img/gwtt_thumbnail.jpg",
       "border_color" : "#2D2771",
-      "ease" : "0.12",
+      "ease" : "0.11",
       "gradient" : {
         "from" : "#2D2771",
         "to" : "#CF6FAC"
@@ -161,7 +161,7 @@
       "lede" : "Total brand development for a mobile phone charging service providing compact, stackable chargers to healthcare facilities.",
       "thumbnail" : "/assets/media/img/chargerx_thumbnail.jpg",
       "border_color" : "#006fb9",
-      "ease" : "0.099",
+      "ease" : "0.097",
       "gradient" : {
         "from" : "#006fb9",
         "to" : "#d1d1d1"

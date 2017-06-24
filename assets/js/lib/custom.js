@@ -11,7 +11,6 @@ class Custom extends Smooth {
     this.dom.section = opt.section
     this.dom.opacity = opt.opacity
     this.dom.parallax = slice(opt.parallax)
-    this.dom.last = [...this.dom.parallax].pop()
 
     this.parallax = this.dom.parallax.map(el => ({
       el: el,
@@ -30,19 +29,20 @@ class Custom extends Smooth {
 
     super.run()
 
-    this.sectionBottom = this.dom.last.getBoundingClientRect().bottom.toFixed()
+    this.sectionBottom = this.dom.section.getBoundingClientRect().bottom.toFixed()
 
     const current = Math.round(Math.abs(this.opacityBottom - this.sectionBottom))
     const opacity = clamp(0, current / (this.vars.height * .15), 1)
     const inview = (this.opacityBottom - this.sectionBottom) >= 0
 
     this.dom.opacity.style.opacity = inview ? opacity.toFixed(2) : 0
+    this.dom.section.style[this.prefix] = this.getTransform(-this.vars.current.toFixed(2))
 
     this.parallax.forEach(entry => {
       entry.current += (this.vars.target - entry.current) * entry.ease
-      entry.current < .1 && (entry.current = 0)
+      entry.current < 0.1 && (entry.current = 0)
 
-      const t = `translateY(${-entry.current.toFixed(2)}px) translateZ(0)`
+      const t = `translateY(${(this.vars.current - entry.current).toFixed(2)}px) translateZ(0)`
 
       entry.el.style[this.prefix] = entry.computed ? `${entry.computed} ${t}` : t
     })

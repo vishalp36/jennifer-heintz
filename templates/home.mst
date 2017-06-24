@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="smooth js-smooth">
+  <div class="scroll-area js-scroll-area">
     <ul class="project-tiles js-tiles">
       {{#tiles}}
         <li class="project-tile js-tile" data-bg-from="{{ tile.gradient.from }}" data-bg-to="{{ tile.gradient.to }}" data-ease="{{ tile.ease }}">

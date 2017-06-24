@@ -35,7 +35,7 @@ class Home extends Default {
 
 	addEvents() {
 
-		this.initSmooth()
+		this.initScroller()
 
 		this.ui.tile.forEach(tile => on(tile, 'click', this.onTileClick))
 		on(this.ui.button, 'click', this.backToTop)
@@ -43,7 +43,7 @@ class Home extends Default {
 
 	removeEvents() {
 
-		this.smooth.destroy()
+		this.scroller.destroy()
 
 		this.ui.tile.forEach(tile => off(tile, 'click', this.onTileClick))
 		off(this.ui.button, 'click', this.backToTop)
@@ -60,10 +60,10 @@ class Home extends Default {
 		document.body.appendChild(this.canvas)
 	}
 
-	initSmooth() {
+	initScroller() {
 
-		this.smooth = new Custom({
-			section: this.ui.smooth,
+		this.scroller = new Custom({
+			section: this.ui.scrollArea,
 			opacity: this.ui.button,
 			parallax: this.ui.tile,
 			noscrollbar: true,
@@ -74,17 +74,17 @@ class Home extends Default {
 			}
 		})
 
-		this.smooth.init()
+		this.scroller.init()
 	}
 
 	backToTop() {
 
-		this.smooth && this.smooth.scrollTo(0)
+		this.scroller && this.scroller.scrollTo(0)
 	}
 
 	onTileClick(evt) {
 
-		this.smooth.off()
+		this.scroller.off()
 
 		this.target = evt.currentTarget
 

@@ -19,8 +19,6 @@ class Custom extends Smooth {
       computed: getComputedStyle(el).transform === 'none' ? false : getComputedStyle(el).transform
     }))
 
-    console.log(this.parallax)
-
     this.sectionBottom = this.dom.section.getBoundingClientRect().bottom.toFixed()
     this.opacityBottom = this.dom.opacity.getBoundingClientRect().bottom.toFixed()
   }

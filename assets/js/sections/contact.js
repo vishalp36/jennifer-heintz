@@ -30,7 +30,15 @@ class Contact extends Default {
 
 		const tl = new TimelineMax({ paused: true, onComplete: done })
 
-		tl.to(this.page, 1, { autoAlpha: 1, ease: Expo.easeInOut })
+		if (req.previous && !req.previous.params.id) {
+			tl.set(this.page, { autoAlpha: 1 })
+			.fromTo(this.page, 1,
+				{ x: '100%' },
+				{ x: '0%' }, 'in')
+		} else {
+			tl.to(this.page, 1, { autoAlpha: 1 })
+		}
+
 		tl.restart()
 	}
 
@@ -40,7 +48,7 @@ class Contact extends Default {
 
 		const tl = new TimelineMax({ paused: true, onComplete: done })
 
-		tl.to(this.page, 1, { autoAlpha: 0, ease: Expo.easeInOut })
+		tl.to(this.page, 1, { x: '100%' }, 'out')
 		tl.restart()
 	}
 

@@ -73,8 +73,6 @@ class Home extends Default {
 				firefoxMultiplier: 30
 			}
 		})
-
-		this.scroller.init()
 	}
 
 	backToTop() {
@@ -107,12 +105,15 @@ class Home extends Default {
 
 		const tl = new TimelineMax({paused: true, onComplete: _ => {
 			done()
+			this.scroller.init()
 			this.lazyLoad()
 		}})
 
-		if (!req.previous) {
-
-			tl.set(this.page, { autoAlpha: 1 })
+		if (req.previous && !req.previous.params.id) {
+			tl.fromTo(this.page, 1,
+				{ x: req.previous.route === '/about' ? '100%' : '-100%' },
+				{ x: '0%' }, 'in')
+		} else {
 			tl.staggerFromTo(this.ui.tile, 1, {
 				y: 100,
 				autoAlpha: 0
@@ -121,16 +122,13 @@ class Home extends Default {
 				y: 0,
 				autoAlpha: 1
 			}, 0.05)
-			tl.restart()
-
-		} else {
-
-			tl.to(this.page, 1, {autoAlpha: 1})
-			tl.restart()
 		}
+
+		tl.restart()
 	}
 
 	animateOut(req, done) {
+		this.route = req.route
 
 		classes.remove(config.body, `is-${this.slug}`)
 
@@ -147,8 +145,7 @@ class Home extends Default {
 
 		const tl = new TimelineMax({paused: true, onComplete: done})
 
-		tl.to(this.ui.mask, time, { y: '-101%', ease: Expo.easeInOut }, 'cleanup')
-		tl.to([this.ui.lazy, this.ui.gradient], time, { y: '101%', ease: Expo.easeInOut }, 'cleanup')
+		tl.to(this.ui.tile, time, { autoAlpha: 0 })
 		tl.to(this.c, time, {
 			H: config.height,
 			Y: 0,
@@ -156,7 +153,7 @@ class Home extends Default {
 			onUpdate: _ => {
 				this.draw(this.c)
 			}
-		}, 'cleanup')
+		}, '-=0.5')
 		tl.to(this.c, time, {
 			W: config.width,
 			X: 0,
@@ -174,7 +171,7 @@ class Home extends Default {
 
 		const tl = new TimelineMax({ paused: true, onComplete: done })
 
-		tl.to(this.page, 1, { autoAlpha: 0, ease: Expo.easeInOut })
+		tl.to(this.page, 1, { x: this.route === '/about' ? '100%' : '-100%' }, 'out')
 		tl.restart()
 	}
 

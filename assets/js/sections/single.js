@@ -11,14 +11,14 @@ class Single extends Default {
 
 		super(opt)
 
-		this.bindEvents()
+		this.bind()
 
 		this.slug = 'single'
 
 		this.isProjectNavClick = false
 	}
 
-	bindEvents() {
+	bind() {
 
 		['onSlide', 'onProjectNavClick']
 			.forEach(fn => this[fn] = this[fn].bind(this))
@@ -48,8 +48,9 @@ class Single extends Default {
 
 			const hero = this.slides.indexOf(slide) === 0
 
-			if (!hero)
+			if (!hero) {
 				slide.style.transform = `translateY(${config.height}px)`
+			}
 		})
 
 		this.slider = new Slider({
@@ -69,13 +70,10 @@ class Single extends Default {
 		})
 	}
 
-	onSlide(evt) {
-
-		const index = evt.current
-		const previous = evt.previous
+	onSlide({ current, previous }) {
 
 		const video = {
-			current: this.slides[index].querySelector('video') || null,
+			current: this.slides[current].querySelector('video') || null,
 			previous: this.slides[previous].querySelector('video') || null
 		}
 
@@ -86,17 +84,17 @@ class Single extends Default {
 
 		const tl = new TimelineMax({ paused: true,
 			onStart: _ => {
-				this.setNavColor(index)
+				this.setNavColor(current)
 			},
 			onComplete: _ => {
 				this.slider.animating = false
 			}
 		})
 
-		tl.staggerTo(this.slides, .9, { cycle: {
-			y: (loop) => index === loop ? 0 : loop < index ? -config.height : config.height,
-			zIndex: (loop) => index === loop ? 2 : 1
-		}, ease: Expo.easeInOut}, 0, 0)
+		tl.staggerTo(this.slides, 1, { cycle: {
+			y: i => current === i ? 0 : i < current ? -config.height : config.height,
+			zIndex: i => current === i ? 2 : 1
+		}}, 0, 0)
 
 		tl.restart()
 	}
@@ -193,7 +191,7 @@ class Single extends Default {
 
 		} else {
 
-			tl.to(this.page, 1, { autoAlpha: 0, ease: Expo.easeInOut })
+			tl.to(this.page, 1, { autoAlpha: 0 })
 			tl.restart()
 		}
 	}

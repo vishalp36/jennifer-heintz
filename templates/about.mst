@@ -1,4 +1,4 @@
-<section class="bio">
+<section class="bio mask js-mask">
   <h1 class="bio__inner js-bio">
     {{#content}}
       {{{.}}}

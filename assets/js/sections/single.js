@@ -11,14 +11,14 @@ class Single extends Default {
 
 		super(opt)
 
-		this.bindEvents()
+		this.bind()
 
 		this.slug = 'single'
 
 		this.isProjectNavClick = false
 	}
 
-	bindEvents() {
+	bind() {
 
 		['onSlide', 'onProjectNavClick']
 			.forEach(fn => this[fn] = this[fn].bind(this))
@@ -47,15 +47,9 @@ class Single extends Default {
 		this.slides.forEach(slide => {
 
 			const hero = this.slides.indexOf(slide) === 0
-			const second = this.slides.indexOf(slide) === 1
 
-			if (hero) {
-				slide.style.zIndex = 2
-			} else if (second) {
-				slide.style.zIndex = 1
-			} else {
-				slide.style.transform = `translateY(${config.height / 2}px)`
-				slide.querySelector('.js-mask').style.transform = `translateY(-${config.height / 2}px)`
+			if (!hero) {
+				slide.style.transform = `translateY(${config.height}px)`
 			}
 		})
 
@@ -98,12 +92,9 @@ class Single extends Default {
 		})
 
 		tl.staggerTo(this.slides, 1, { cycle: {
-			y: i => current === i ? 0 : i < current ? -config.height : config.height
-		}, ease: Expo.easeInOut}, 'slide', 0, 0)
-
-		tl.staggerTo([...this.ui.mask], 1, { cycle: {
-			y: i => current === i ? 0 : i < current ? config.height / 2 : -config.height / 2
-		}, ease: Expo.easeInOut}, 'slide', 0, 0)
+			y: i => current === i ? 0 : i < current ? -config.height : config.height,
+			zIndex: i => current === i ? 2 : 1
+		}}, 0, 0)
 
 		tl.restart()
 	}
@@ -200,7 +191,7 @@ class Single extends Default {
 
 		} else {
 
-			tl.to(this.page, 1, { autoAlpha: 0, ease: Expo.easeInOut })
+			tl.to(this.page, 1, { autoAlpha: 0 })
 			tl.restart()
 		}
 	}

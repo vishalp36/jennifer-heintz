@@ -47,9 +47,16 @@ class Single extends Default {
 		this.slides.forEach(slide => {
 
 			const hero = this.slides.indexOf(slide) === 0
+			const second = this.slides.indexOf(slide) === 1
 
-			if (!hero)
-				slide.style.transform = `translateY(${config.height}px)`
+			if (hero) {
+				slide.style.zIndex = 2
+			} else if (second) {
+				slide.style.zIndex = 1
+			} else {
+				slide.style.transform = `translateY(${config.height / 2}px)`
+				slide.querySelector('.js-mask').style.transform = `translateY(-${config.height / 2}px)`
+			}
 		})
 
 		this.slider = new Slider({
@@ -69,13 +76,10 @@ class Single extends Default {
 		})
 	}
 
-	onSlide(evt) {
-
-		const index = evt.current
-		const previous = evt.previous
+	onSlide({ current, previous }) {
 
 		const video = {
-			current: this.slides[index].querySelector('video') || null,
+			current: this.slides[current].querySelector('video') || null,
 			previous: this.slides[previous].querySelector('video') || null
 		}
 
@@ -86,17 +90,20 @@ class Single extends Default {
 
 		const tl = new TimelineMax({ paused: true,
 			onStart: _ => {
-				this.setNavColor(index)
+				this.setNavColor(current)
 			},
 			onComplete: _ => {
 				this.slider.animating = false
 			}
 		})
 
-		tl.staggerTo(this.slides, .9, { cycle: {
-			y: (loop) => index === loop ? 0 : loop < index ? -config.height : config.height,
-			zIndex: (loop) => index === loop ? 2 : 1
-		}, ease: Expo.easeInOut}, 0, 0)
+		tl.staggerTo(this.slides, 1, { cycle: {
+			y: i => current === i ? 0 : i < current ? -config.height : config.height
+		}, ease: Expo.easeInOut}, 'slide', 0, 0)
+
+		tl.staggerTo([...this.ui.mask], 1, { cycle: {
+			y: i => current === i ? 0 : i < current ? config.height / 2 : -config.height / 2
+		}, ease: Expo.easeInOut}, 'slide', 0, 0)
 
 		tl.restart()
 	}

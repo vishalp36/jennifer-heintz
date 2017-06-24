@@ -41,8 +41,8 @@ class About extends Default {
 		target.x = (mouse.x - width / 2) / width * 12
   	target.y = (mouse.y - height / 2) / height * 12
 
-		ease.x += (target.x - ease.x) * 0.1
-		ease.y += (target.y - ease.y) * 0.1
+		ease.x += (target.x - ease.x) * 0.2
+		ease.y += (target.y - ease.y) * 0.2
 
 		ui.bio.style.transform = `rotateX(${-ease.y.toFixed(2)}deg) rotateY(${ease.x.toFixed(2)}deg)`
 	}

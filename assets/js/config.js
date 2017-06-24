@@ -11,6 +11,8 @@ const config = {
 	width: window.innerWidth,
 	height: window.innerHeight,
 
+	mouse: { x: 0, y: 0 },
+
 	isProjectNavClick: false
 }
 

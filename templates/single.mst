@@ -1,45 +1,41 @@
 <section class="slider js-slider">
   {{#content}}
     <article class="slide js-slides">
-      <div class="slide__inner js-mask">
-        {{#image}}
-          {{> image_block}}
-        {{/image}}
+      {{#image}}
+        {{> image_block}}
+      {{/image}}
 
-        {{#split}}
-          {{> split_block}}
-        {{/split}}
+      {{#split}}
+        {{> split_block}}
+      {{/split}}
 
-        {{#text}}
-          {{> text_block}}
-        {{/text}}
+      {{#text}}
+        {{> text_block}}
+      {{/text}}
 
-        {{#video}}
-          {{> video_block}}
-        {{/video}}
-      </div>
+      {{#video}}
+        {{> video_block}}
+      {{/video}}
     </article>
   {{/content}}
 
 
   <article class="slide js-slides">
-    <div class="slide__inner js-mask">
-      <div class="project-nav__img project-nav__img--prev js-previous-project" style="background-image: url('{{ prev.hero }}');"></div>
-      <div class="project-nav__img project-nav__img--next js-next-project" style="background-image: url('{{ next.hero }}');"></div>
-      <div class="block block--split">
-        <a class="block block--split__column block--project-nav js-project-nav-link" data-direction="previous" href="/work/{{ prev.slug }}">
-          <div class="project-nav__inner">
-            <p class="project-nav__label">Previous</p>
-            <h1 class="project-nav__title">{{ prev.title }}</h1>
-          </div>
-        </a>
-        <a class="block block--split__column block--project-nav js-project-nav-link" data-direction="next" href="/work/{{ next.slug }}">
-          <div class="project-nav__inner">
-            <p class="project-nav__label">Next</p>
-            <h1 class="project-nav__title">{{ next.title }}</h1>
-          </div>
-        </a>
-      </div>
+    <div class="project-nav__img project-nav__img--prev js-previous-project" style="background-image: url('{{ prev.hero }}');"></div>
+    <div class="project-nav__img project-nav__img--next js-next-project" style="background-image: url('{{ next.hero }}');"></div>
+    <div class="block block--split">
+      <a class="block block--split__column block--project-nav js-project-nav-link" data-direction="previous" href="/work/{{ prev.slug }}">
+        <div class="project-nav__inner">
+          <p class="project-nav__label">Previous</p>
+          <h1 class="project-nav__title">{{ prev.title }}</h1>
+        </div>
+      </a>
+      <a class="block block--split__column block--project-nav js-project-nav-link" data-direction="next" href="/work/{{ next.slug }}">
+        <div class="project-nav__inner">
+          <p class="project-nav__label">Next</p>
+          <h1 class="project-nav__title">{{ next.title }}</h1>
+        </div>
+      </a>
     </div>
   </article>
 </section>

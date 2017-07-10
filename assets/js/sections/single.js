@@ -3,7 +3,7 @@ import utils from 'utils'
 import classes from 'dom-classes'
 import { on, off } from 'dom-event'
 import Default from './default'
-import Slider from '../lib/slider'
+import Slider from 'slider-manager'
 
 class Single extends Default {
 
@@ -55,7 +55,8 @@ class Single extends Default {
 
 		this.slider = new Slider({
 		  length: this.slides.length - 1,
-		  callback: this.onSlide
+		  callback: this.onSlide,
+			limitInertia: true
 		})
 
 		this.slider.init()
@@ -70,7 +71,7 @@ class Single extends Default {
 		})
 	}
 
-	onSlide({ current, previous }) {
+	onSlide({ current, previous }, delta) {
 
 		const video = {
 			current: this.slides[current].querySelector('video') || null,
